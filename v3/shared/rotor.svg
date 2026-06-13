@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+  <!-- Skyline rotor-glyph: 4-blade abstract propeller, filled, single-color, reads at 16px and 200px -->
+  <g>
+    <!-- four swept blades (pinwheel) around hub -->
+    <path d="M50 50 L46 10 Q60 12 66 26 Q62 40 50 50 Z"/>
+    <path d="M50 50 L90 54 Q88 40 74 34 Q60 38 50 50 Z"/>
+    <path d="M50 50 L54 90 Q40 88 34 74 Q38 60 50 50 Z"/>
+    <path d="M50 50 L10 46 Q12 60 26 66 Q40 62 50 50 Z"/>
+    <circle cx="50" cy="50" r="7.5"/>
+  </g>
+</svg>

@@ -1,0 +1,205 @@
+/* =====================================================
+   Skyline v3 — Shared section patterns
+   Used by all three variants. Differences live in each variant.css.
+   ===================================================== */
+
+/* ---------- Editorial section: one big idea, generous air ---------- */
+.section-editorial {
+  padding: var(--v-section-pad) 0;
+  position: relative;
+}
+.section-editorial + .section-editorial { padding-top: 0; }
+
+/* ---------- Pinned section (cinematic chapters) ---------- */
+.section-pinned {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+/* ---------- Paper section (warm light editorial break) ---------- */
+.section-paper {
+  background: var(--paper);
+  color: var(--paper-ink);
+  padding: var(--v-section-pad) 0;
+  position: relative;
+  z-index: 2;
+}
+.section-paper .eyebrow { color: var(--paper-ink-soft); }
+.section-paper .lede { color: var(--paper-ink-soft); }
+.section-paper .headline-massive em,
+.section-paper .headline-editorial em { color: var(--paper-ink); }
+.section-paper .accent-gold em { color: var(--gold-600); }
+.section-paper .accent-ember em { color: var(--ember-500); }
+
+/* ---------- Massive headline helper shared across variants ---------- */
+.headline-massive,
+.headline-editorial {
+  max-width: 16ch;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.headline-massive .word,
+.headline-editorial .word { white-space: normal; }
+.headline-wide { max-width: none; }
+
+/* ---------- Overflow safety: grid/flex children must be allowed to shrink ---------- */
+.ed-pinned .container,
+.section-pinned .container,
+.cine-panel .container { min-width: 0; max-width: 100%; }
+
+/* ---------- Rotor divider (signature section break) ---------- */
+.rotor-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  padding: var(--space-12) 0;
+  color: var(--ink-500);
+}
+.rotor-divider::before,
+.rotor-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  max-width: 220px;
+  background: linear-gradient(90deg, transparent, var(--border-soft), transparent);
+}
+.rotor-divider .rotor-mark { width: 28px; height: 28px; flex: none; }
+.section-paper .rotor-divider { color: var(--paper-ink-soft); }
+.section-paper .rotor-divider::before,
+.section-paper .rotor-divider::after {
+  background: linear-gradient(90deg, transparent, var(--paper-line), transparent);
+}
+
+/* ---------- Eyebrow with rotor glyph (rotor + label combo) ---------- */
+.eyebrow-glyph {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-eyebrow);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+}
+.eyebrow-glyph .rotor-mark { width: 16px; height: 16px; flex: none; }
+.eyebrow-glyph.is-ember { color: var(--ember-300); }
+.eyebrow-glyph.is-muted { color: var(--ink-400); }
+.section-paper .eyebrow-glyph { color: var(--paper-ink-soft); }
+.section-paper .eyebrow-glyph.is-gold { color: var(--gold-600); }
+.section-paper .eyebrow-glyph.is-ember { color: var(--ember-500); }
+
+/* ---------- Rotor mark base (inline svg sizing) ---------- */
+.rotor-mark { display: inline-block; }
+.rotor-mark svg { width: 100%; height: 100%; display: block; }
+
+/* spinning rotor — used VERY sparingly */
+@media (prefers-reduced-motion: no-preference) {
+  .rotor-spin svg { animation: rotor-spin 8s linear infinite; transform-origin: 50% 50%; }
+}
+@keyframes rotor-spin { to { transform: rotate(360deg); } }
+
+/* ---------- Single-blade list marker ---------- */
+.list-rotor { display: grid; gap: var(--space-5); }
+.list-rotor li {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: var(--space-4);
+  align-items: start;
+}
+.list-rotor li::before {
+  content: "";
+  width: 12px; height: 12px;
+  margin-top: 0.45em;
+  background: currentColor;
+  -webkit-mask: var(--rotor-blade) center / contain no-repeat;
+          mask: var(--rotor-blade) center / contain no-repeat;
+  color: var(--gold-400);
+  opacity: 0.9;
+}
+/* single-blade mask data-uri */
+:root {
+  --rotor-blade: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='black'><path d='M50 50 L46 10 Q60 12 66 26 Q62 40 50 50 Z'/><circle cx='50' cy='50' r='7.5'/></svg>");
+}
+.list-rotor.is-ember li::before { color: var(--ember-300); }
+
+/* ---------- Char-stagger reveal (signature editorial motion) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-stagger-chars] .char {
+    display: inline-block;
+    opacity: 0;
+    transform: translate3d(0, 0.5em, 0) rotate(2deg);
+    transition: opacity var(--dur-reveal) var(--ease-luke),
+                transform var(--dur-reveal) var(--ease-luke);
+    will-change: opacity, transform;
+  }
+  .js [data-stagger-chars].is-in .char {
+    opacity: 1;
+    transform: none;
+  }
+  /* word-level variant */
+  .js [data-stagger-words] .word {
+    display: inline-block;
+    opacity: 0;
+    transform: translate3d(0, 0.6em, 0);
+    transition: opacity var(--dur-reveal) var(--ease-luke),
+                transform var(--dur-reveal) var(--ease-luke);
+  }
+  .js [data-stagger-words].is-in .word { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js [data-stagger-chars] .char,
+  .js [data-stagger-words] .word { opacity: 1 !important; transform: none !important; }
+}
+.char-space { display: inline-block; width: 0.28em; }
+
+/* ---------- Shared nav glyph (swap text logo with rotor) ---------- */
+.nav-rotor { width: 30px; height: 30px; color: var(--gold-400); flex: none; }
+.is-firefighting .nav-rotor { color: var(--ember-300); }
+
+/* ---------- Shared: one-CTA hero discipline ---------- */
+.hero-one-cta { display: flex; }
+
+/* ---------- Buyer pill row (condensed typology) ---------- */
+.buyer-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.buyer-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px 18px;
+  border: 1px solid var(--border-mid);
+  border-radius: var(--r-pill);
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-200);
+  transition: border-color var(--dur-quick) var(--ease-luke), color var(--dur-quick) var(--ease-luke);
+}
+.buyer-pill:hover { border-color: var(--ember-300); color: var(--ember-300); }
+.buyer-pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ember-500); }
+.section-paper .buyer-pill { border-color: var(--paper-line); color: var(--paper-ink); }
+
+/* ---------- Tiny editorial body (Luke "before claude" frame) ---------- */
+.editorial-body {
+  font-size: var(--text-body);
+  line-height: 1.6;
+  color: var(--ink-300);
+  max-width: 46ch;
+}
+.section-paper .editorial-body { color: var(--paper-ink-soft); }
+
+/* ---------- Magnetic CTA enhancement (cursor affordance) ---------- */
+.cta-magnetic { position: relative; will-change: transform; }
+
+/* ---------- Reduced-motion safety for pinned ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .section-pinned { min-height: auto; padding: var(--v-section-pad) 0; }
+}

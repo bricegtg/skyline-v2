@@ -1,0 +1,189 @@
+/* =====================================================
+   Variant B v3 — "Cinematic Industrial"
+   Closest to orbprecision / stratum-energy: full-bleed dark
+   cinema, hero clip-path reveal, GSAP pinned crossfade chapters,
+   horizontal scroll equipment showcase, full-screen gold (clean)
+   + full-screen ember (firefighting) sections, magnetic CTAs.
+   Most dramatic motion. Same tokens — only layout/motion differ.
+   ===================================================== */
+
+:root {
+  --v-intensity: 2;
+  --v-section-pad: clamp(80px, 9vw, 150px);
+  --v-grain-opacity: 0.75;
+}
+.grain { opacity: var(--v-grain-opacity); }
+
+/* ---------- Full-bleed cinematic hero ---------- */
+.cine-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+}
+.cine-hero-media { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+.cine-hero-media img,
+.cine-hero-media video { width: 100%; height: 100%; object-fit: cover; will-change: transform; }
+.cine-hero-scrim {
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(5,5,7,0.45) 0%, rgba(5,5,7,0.35) 40%, rgba(5,5,7,0.92) 100%);
+}
+.cine-hero-content { width: 100%; padding-bottom: clamp(60px, 9vh, 130px); padding-top: clamp(120px, 14vh, 180px); }
+.cine-hero-eyebrow { margin-bottom: var(--space-6); }
+.cine-hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9.5vw, 9.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  color: var(--ink-100);
+  max-width: 16ch;
+}
+.cine-hero-headline em { font-style: normal; color: var(--gold-400); }
+.cine-hero-foot {
+  margin-top: var(--space-10);
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: var(--space-10); flex-wrap: wrap;
+}
+.cine-hero-lede { font-size: var(--text-lede); line-height: 1.5; color: var(--ink-200); max-width: 46ch; }
+
+/* ---------- Pinned crossfade chapter group ---------- */
+.cine-pin-group {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.cine-panel {
+  min-height: 100vh;
+  display: grid; place-items: center;
+  text-align: center;
+  padding: var(--v-section-pad) var(--page-pad);
+}
+.cine-panel .container { width: 100%; }
+.cine-panel-num { font-family: var(--font-display); font-size: var(--text-h5); color: var(--gold-400); letter-spacing: 0.2em; margin-bottom: var(--space-5); display: block; }
+.cine-panel h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 6rem);
+  line-height: 1.0; letter-spacing: -0.025em; text-transform: uppercase;
+  color: var(--ink-100); max-width: 18ch; margin: 0 auto;
+}
+.cine-panel h2 em { font-style: normal; color: var(--gold-400); }
+.cine-panel p { color: var(--ink-300); max-width: 52ch; margin: var(--space-8) auto 0; font-size: var(--text-lede); line-height: 1.55; }
+.is-firefighting .cine-panel-num,
+.is-firefighting .cine-panel h2 em { color: var(--ember-300); }
+
+/* ---------- Full-screen accent section (gold cleaning / ember fire) ---------- */
+.cine-fullscreen {
+  position: relative;
+  min-height: 92vh;
+  display: grid; place-items: center;
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+.cine-fullscreen-media { position: absolute; inset: 0; z-index: -2; }
+.cine-fullscreen-media img { width: 100%; height: 100%; object-fit: cover; will-change: transform; }
+.cine-fullscreen.is-gold::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(5,5,7,0.6), rgba(11,9,3,0.82)), radial-gradient(120% 90% at 50% 30%, var(--gold-glow), transparent 60%);
+}
+.cine-fullscreen.is-ember::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(5,5,7,0.6), rgba(14,5,4,0.85)), radial-gradient(120% 90% at 50% 30%, var(--ember-glow), transparent 60%);
+}
+.cine-fullscreen h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 8vw, 8rem);
+  line-height: 0.94; letter-spacing: -0.03em; text-transform: uppercase;
+  color: var(--ink-100); max-width: 15ch; margin: 0 auto;
+}
+.cine-fullscreen.is-gold h2 em { font-style: normal; color: var(--gold-400); }
+.cine-fullscreen.is-ember h2 em { font-style: normal; color: var(--ember-300); }
+.cine-fullscreen p { color: var(--ink-200); max-width: 50ch; margin: var(--space-8) auto var(--space-10); font-size: var(--text-lede); line-height: 1.5; }
+
+/* ---------- Horizontal scroll equipment / scope showcase ---------- */
+.cine-hscroll { position: relative; overflow: hidden; }
+.cine-hscroll-track {
+  display: flex;
+  gap: var(--space-6);
+  padding: var(--v-section-pad) var(--page-pad);
+  will-change: transform;
+}
+.cine-hcard {
+  position: relative;
+  flex: 0 0 min(80vw, 460px);
+  min-height: 64vh;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--border-faint);
+}
+.cine-hcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.cine-hcard::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(5,5,7,0.1) 0%, rgba(5,5,7,0.92) 100%); }
+.cine-hcard-body { position: absolute; bottom: 0; left: 0; right: 0; padding: var(--space-8); }
+.cine-hcard-num { font-family: var(--font-display); font-size: var(--text-h5); color: var(--gold-400); }
+.is-firefighting .cine-hcard-num { color: var(--ember-300); }
+.cine-hcard h4 { font-family: var(--font-display); font-size: var(--text-h4); text-transform: uppercase; letter-spacing: -0.02em; color: var(--ink-100); margin: var(--space-2) 0 var(--space-3); }
+.cine-hcard p { color: var(--ink-300); font-size: 14px; line-height: 1.5; }
+.cine-hscroll-hint { position: absolute; top: var(--space-10); left: var(--page-pad); }
+/* fallback when JS/GSAP off — allow native horizontal scroll */
+.cine-hscroll { -webkit-overflow-scrolling: touch; }
+@media (prefers-reduced-motion: reduce) {
+  .cine-hscroll { overflow-x: auto; }
+}
+
+/* ---------- Standard cinematic content section ---------- */
+.cine-section { padding: var(--v-section-pad) 0; position: relative; }
+.cine-head { max-width: 980px; margin-bottom: var(--space-12); }
+.cine-head h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-h2); line-height: 1.0; letter-spacing: -0.02em; text-transform: uppercase;
+  color: var(--ink-100); max-width: 20ch;
+}
+.cine-head h2 em { font-style: normal; color: var(--gold-400); }
+.is-firefighting .cine-head h2 em { color: var(--ember-300); }
+.cine-head .editorial-body { margin-top: var(--space-6); max-width: 56ch; }
+
+/* ---------- CTA ---------- */
+.cine-cta { padding: var(--v-section-pad) 0; text-align: center; }
+.cine-cta .headline-editorial { margin: 0 auto var(--space-8); max-width: 18ch; }
+
+/* ---------- Magnetic CTA scale affordance ---------- */
+.cta-magnetic { transition: transform 0.18s var(--ease-luke); }
+
+/* ---------- Firefighting ember accent overrides ---------- */
+.is-firefighting .cine-hero-headline em { color: var(--ember-300); }
+.is-firefighting .eyebrow-glyph { color: var(--ember-300); }
+.is-firefighting .nav-rotor { color: var(--ember-300); }
+.is-firefighting ::selection { background: var(--ember-500); color: var(--ink-100); }
+
+/* ---------- Spec grid spacing ---------- */
+.cine-spec-wrap { margin-top: var(--space-12); }
+
+/* ---------- Contact (Variant B keeps dark cinema) ---------- */
+.cine-contact-hero { position: relative; min-height: clamp(420px, 56vh, 560px); display: flex; align-items: flex-end; overflow: hidden; isolation: isolate; }
+.cine-contact-hero-media { position: absolute; inset: 0; z-index: -2; }
+.cine-contact-hero-media img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.85) brightness(0.6); }
+.cine-contact-hero::before { content:""; position:absolute; inset:0; z-index:-1; background: linear-gradient(180deg, rgba(5,5,7,0.5), rgba(5,5,7,0.94)); }
+.cine-contact-hero-content { padding-bottom: clamp(40px, 5vw, 70px); padding-top: clamp(120px, 14vw, 170px); }
+.cine-contact-hero h1 {
+  font-family: var(--font-display); font-size: clamp(2.6rem, 7vw, 6.5rem); line-height: 0.94;
+  letter-spacing: -0.03em; text-transform: uppercase; color: var(--ink-100); max-width: 16ch;
+}
+.cine-contact-hero h1 em { font-style: normal; color: var(--gold-400); }
+.cine-contact-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(40px, 6vw, 96px); padding: var(--v-section-pad) 0; }
+@media (max-width: 940px) { .cine-contact-grid { grid-template-columns: 1fr; } }
+.contact-form-wrap-b { background: var(--ink-850); border: 1px solid var(--border-faint); border-radius: var(--r-lg); padding: clamp(28px, 3vw, 44px); }
+.cine-reach-card { display: grid; gap: var(--space-1); padding: var(--space-6) 0; border-top: 1px solid var(--border-faint); }
+.cine-reach-card:last-child { border-bottom: 1px solid var(--border-faint); }
+.cine-reach-label { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-400); }
+.cine-reach-value { font-family: var(--font-display); font-size: var(--text-h5); text-transform: uppercase; color: var(--ink-100); }
+.cine-reach-value a { color: inherit; }
+.cine-reach-value a:hover { color: var(--gold-400); }
+
+@media (max-width: 600px) {
+  .cine-hero-headline { font-size: clamp(2.6rem, 14vw, 4.4rem); }
+  .cine-hcard { flex-basis: 84vw; }
+}

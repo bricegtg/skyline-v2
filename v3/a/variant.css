@@ -1,0 +1,184 @@
+/* =====================================================
+   Variant A v3 — "Pure Editorial"
+   Closest to Luke / Jerry: pure restraint, one big idea per
+   section, viewport-filling headlines, generous whitespace.
+   Black/paper. Gold ONLY on cleaning, ember ONLY on IND-160-F.
+   ===================================================== */
+
+:root {
+  --v-intensity: 1;
+  --v-section-pad: clamp(110px, 15vw, 240px);
+  --v-grain-opacity: 0.5;
+}
+.grain { opacity: var(--v-grain-opacity); }
+
+/* ---------- Editorial hero — headline fills 85% of viewport ---------- */
+.ed-hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(120px, 16vh, 200px) 0 var(--space-24);
+  position: relative;
+}
+.ed-hero .container { width: 100%; }
+.ed-hero-eyebrow { margin-bottom: var(--space-10); }
+.ed-hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 9.5vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  color: var(--ink-100);
+  max-width: 15ch;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.ed-hero-headline .word { white-space: normal; }
+.ed-hero-headline em { font-style: normal; color: var(--gold-400); }
+.ed-hero-foot {
+  margin-top: clamp(var(--space-12), 6vh, var(--space-24));
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-10);
+  flex-wrap: wrap;
+}
+.ed-hero-lede { font-size: var(--text-lede); line-height: 1.55; color: var(--ink-300); max-width: 42ch; }
+
+/* ---------- Editorial section: one idea, oversized type ---------- */
+.ed-section { padding: var(--v-section-pad) 0; }
+.ed-lead { max-width: 1100px; }
+.ed-lead .eyebrow-glyph { margin-bottom: var(--space-8); }
+.ed-lead h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-editorial);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--ink-100);
+  max-width: 18ch;
+}
+.ed-lead h2 em { font-style: normal; }
+.ed-lead .editorial-body { margin-top: var(--space-8); max-width: 52ch; }
+
+/* ---------- Scope: editorial numbered list, no card chrome ---------- */
+.ed-scope-list { margin-top: var(--space-20); display: grid; gap: 0; }
+.ed-scope-row {
+  display: grid;
+  grid-template-columns: 90px 1fr minmax(0, 38ch);
+  gap: var(--space-8);
+  align-items: baseline;
+  padding: var(--space-10) 0;
+  border-top: 1px solid var(--border-faint);
+}
+.ed-scope-row:last-child { border-bottom: 1px solid var(--border-faint); }
+.ed-scope-num { font-family: var(--font-display); font-size: var(--text-h5); color: var(--ink-500); }
+.ed-scope-title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--ink-100);
+  transition: color var(--dur-quick) var(--ease-luke);
+}
+.ed-scope-row:hover .ed-scope-title { color: var(--gold-400); }
+.ed-scope-desc { color: var(--ink-300); font-size: var(--text-body); line-height: 1.55; }
+@media (max-width: 860px) {
+  .ed-scope-row { grid-template-columns: 56px 1fr; }
+  .ed-scope-desc { grid-column: 1 / -1; padding-left: 56px + var(--space-8); }
+}
+@media (max-width: 560px) {
+  .ed-scope-row { grid-template-columns: 1fr; gap: var(--space-3); }
+  .ed-scope-desc { padding-left: 0; }
+}
+
+/* ---------- Pinned editorial moment (the ONE signature motion) ---------- */
+.ed-pinned {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: var(--v-section-pad) 0;
+}
+.ed-pinned .headline-massive {
+  margin: 0 auto;
+  max-width: 18ch;
+}
+
+/* ---------- Process: clean numbered steps ---------- */
+.ed-process { margin-top: var(--space-20); display: grid; gap: var(--space-12); max-width: 760px; }
+.ed-step { display: grid; grid-template-columns: 70px 1fr; gap: var(--space-8); align-items: start; }
+.ed-step-num { font-family: var(--font-display); font-size: var(--text-h4); color: var(--gold-400); line-height: 1; }
+.ed-step h5 { font-family: var(--font-display); font-size: var(--text-h5); text-transform: uppercase; letter-spacing: -0.005em; color: var(--ink-100); margin-bottom: var(--space-2); }
+.ed-step p { color: var(--ink-300); line-height: 1.55; }
+
+/* ---------- CTA — single, large ---------- */
+.ed-cta { padding: var(--v-section-pad) 0; text-align: center; }
+.ed-cta .headline-massive { margin: 0 auto var(--space-10); }
+.ed-cta .editorial-body { margin: 0 auto var(--space-10); text-align: center; }
+
+/* ---------- Footer rotor mark ---------- */
+.footer .cmp-footer-mark { margin-bottom: var(--space-5); color: var(--ink-100); }
+
+/* ---------- Spec grid spacing (firefighting) ---------- */
+.ed-spec-wrap { margin-top: var(--space-16); }
+
+/* ---------- Product hero (firefighting, ember-led) ---------- */
+.is-firefighting .ed-hero-headline em { color: var(--ember-300); }
+.is-firefighting .ed-lead h2 em { color: var(--ember-300); }
+.is-firefighting .ed-step-num { color: var(--ember-300); }
+.is-firefighting .ed-scope-row:hover .ed-scope-title { color: var(--ember-300); }
+.is-firefighting .eyebrow-glyph { color: var(--ember-300); }
+.is-firefighting .nav-rotor { color: var(--ember-300); }
+.is-firefighting ::selection { background: var(--ember-500); color: var(--ink-100); }
+
+/* ---------- Contact (Variant A picks PAPER) ---------- */
+.ed-contact-hero { padding: clamp(140px, 18vh, 220px) 0 var(--space-16); }
+.ed-contact-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 8rem);
+  line-height: 0.92; letter-spacing: -0.03em; text-transform: uppercase;
+  color: var(--paper-ink); max-width: 16ch;
+}
+.ed-contact-hero h1 em { font-style: normal; color: var(--gold-600); }
+.ed-contact-grid {
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(40px, 6vw, 96px);
+  padding-bottom: var(--v-section-pad);
+}
+@media (max-width: 940px) { .ed-contact-grid { grid-template-columns: 1fr; } }
+
+/* paper form */
+.section-paper .form-field label { color: var(--paper-ink-soft); }
+.section-paper .form-field input,
+.section-paper .form-field select,
+.section-paper .form-field textarea {
+  background: #fff; border: 1px solid var(--paper-line); color: var(--paper-ink);
+}
+.section-paper .form-field input:focus,
+.section-paper .form-field select:focus,
+.section-paper .form-field textarea:focus { border-color: var(--gold-600); background: #fff; }
+.ed-reach-card { padding: var(--space-6) 0; border-top: 1px solid var(--paper-line); display: grid; gap: var(--space-1); }
+.ed-reach-card:last-child { border-bottom: 1px solid var(--paper-line); }
+.ed-reach-label { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--paper-ink-soft); }
+.ed-reach-value { font-family: var(--font-display); font-size: var(--text-h5); text-transform: uppercase; color: var(--paper-ink); }
+.ed-reach-value a { color: inherit; }
+.ed-reach-value a:hover { color: var(--gold-600); }
+
+/* contact page nav on paper */
+.contact-page .nav { background: linear-gradient(180deg, rgba(248,245,238,0.92) 0%, rgba(248,245,238,0) 100%); }
+.contact-page .nav.is-scrolled { background: rgba(248,245,238,0.85); border-bottom-color: var(--paper-line); }
+.contact-page .nav-brand-name { color: var(--paper-ink); }
+.contact-page .nav-link { color: var(--paper-ink-soft); }
+.contact-page .nav-link:hover { color: var(--gold-600); }
+.contact-page .nav-toggle { border-color: var(--paper-line); }
+.contact-page .nav-toggle span { background: var(--paper-ink); }
+.contact-page .nav.is-open, .contact-page .nav.is-open .nav-links { background: var(--paper); }
+.contact-page .nav-rotor { color: var(--gold-600); }
+.contact-form-col, .contact-reach-col { min-width: 0; }
+
+/* responsive hero headline guard */
+@media (max-width: 600px) {
+  .ed-hero-headline { font-size: clamp(2.8rem, 16vw, 4.5rem); }
+}

@@ -1,0 +1,57 @@
+/* =====================================================
+   Skyline v3 — Token EXTENSIONS
+   Extends ../../styles/tokens.css (does NOT replace it).
+   Adds editorial motion + display scale used by all three variants.
+   Identity tokens (fonts, brand colors) are inherited unchanged.
+   ===================================================== */
+
+:root {
+  /* ---- Motion tokens (Luke editorial easing) ---- */
+  --ease-luke: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-reveal: 1200ms;
+  --dur-quick: 220ms;
+  --stagger: 60ms;
+
+  /* ---- Bigger editorial display sizes ---- */
+  --text-massive:    clamp(4rem, 12vw, 12rem);   /* viewport-filling headlines */
+  --text-editorial:  clamp(2.5rem, 6vw, 6rem);   /* section headlines */
+  --text-kicker:     clamp(1.1rem, 1.4vw, 1.45rem);
+
+  /* ---- Tighter editorial line-heights ---- */
+  --lh-display: 0.9;
+  --lh-tight: 1.05;
+
+  /* ---- Paper section variants ---- */
+  --paper-ink: #16130C;            /* near-black ink on paper */
+  --paper-ink-soft: #4A4234;
+  --paper-line: rgba(22, 19, 12, 0.14);
+
+  /* ---- Per-variant intensity (overridden per variant.css) ---- */
+  --v-intensity: 1;                /* 1 = editorial restraint, higher = cinematic */
+  --v-section-pad: clamp(96px, 13vw, 220px);
+  --v-grain-opacity: 0.6;
+}
+
+/* =====================================================
+   Massive editorial headline primitive
+   ===================================================== */
+.headline-massive {
+  font-family: var(--font-display);
+  font-size: var(--text-massive);
+  line-height: var(--lh-display);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.headline-editorial {
+  font-family: var(--font-display);
+  font-size: var(--text-editorial);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* Editorial em — accent colour set per section, never two accents at once */
+.headline-massive em,
+.headline-editorial em { font-style: normal; }
+.accent-gold  em, em.accent-gold  { color: var(--gold-400); }
+.accent-ember em, em.accent-ember { color: var(--ember-300); }
