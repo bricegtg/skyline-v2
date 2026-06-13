@@ -1,0 +1,212 @@
+/* ===================================================================
+   SKYLINE DRONES — v2 DESIGN TOKENS
+   Brand-consistent (Arial Black + Calibri) + premium motion ready
+   =================================================================== */
+
+:root {
+  /* —— Brand Color System —— */
+  --gold: #E8B84B;
+  --gold-bright: #F5C95C;
+  --gold-deep: #B8953E;
+  --gold-glow: rgba(232, 184, 75, 0.18);
+
+  --ember: #D9362B;
+  --ember-bright: #FF6B5A;
+  --ember-deep: #A82820;
+  --ember-glow: rgba(217, 54, 43, 0.20);
+
+  /* —— Surface System (deep cinema dark, never pure black) —— */
+  --bg-deep:   #050507;
+  --bg-base:   #0A0A0C;
+  --bg-elev:   #111114;
+  --bg-elev-2: #16161A;
+  --card:      #1A1A1F;
+  --card-hi:   #22222A;
+  --border:    rgba(255,255,255,0.06);
+  --border-hi: rgba(255,255,255,0.12);
+  --hairline:  rgba(255,255,255,0.04);
+
+  /* —— Foreground —— */
+  --fg:        #F4F4F6;
+  --fg-muted:  #B6B6BD;
+  --fg-dim:    #8C8C95;
+  --fg-faint:  #5C5C66;
+
+  /* —— Type System (kept Arial Black + Calibri) —— */
+  --font-display: 'Arial Black', 'Arial Bold', 'Helvetica Neue', Arial, sans-serif;
+  --font-body:    Calibri, 'Trebuchet MS', Arial, sans-serif;
+  --font-mono:    'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+
+  --text-eyebrow: clamp(10px, 0.75vw, 12px);
+  --text-xs:      12px;
+  --text-sm:      14px;
+  --text-base:    16px;
+  --text-lg:      18px;
+  --text-xl:      clamp(20px, 1.5vw, 24px);
+  --text-2xl:     clamp(26px, 2.2vw, 32px);
+  --text-3xl:     clamp(32px, 3vw, 44px);
+  --text-4xl:     clamp(40px, 4.5vw, 64px);
+  --text-hero:    clamp(48px, 7vw, 112px);
+
+  /* —— Spacing —— */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --space-section: clamp(80px, 12vw, 160px);
+
+  /* —— Motion (Expo.out, the premium curve) —— */
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-soft:cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in:      cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-snap:    cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --dur-fast:   180ms;
+  --dur-base:   320ms;
+  --dur-slow:   620ms;
+  --dur-epic:   1100ms;
+
+  /* —— Effects —— */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius:    14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --shadow-card:   0 8px 24px rgba(0,0,0,0.35);
+  --shadow-pop:    0 24px 64px rgba(0,0,0,0.55);
+  --shadow-gold:   0 16px 48px rgba(232,184,75,0.18);
+  --shadow-ember:  0 16px 48px rgba(217,54,43,0.18);
+
+  --blur-card: blur(20px) saturate(140%);
+
+  --container: 1280px;
+  --container-wide: 1440px;
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg-deep);
+  color: var(--fg);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+img, video { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+::selection { background: var(--gold); color: var(--bg-deep); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+}
+
+/* ===== UTILITIES ===== */
+.container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+.container-wide { max-width: var(--container-wide); margin: 0 auto; padding: 0 24px; }
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--text-eyebrow);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow::before {
+  content: '';
+  width: 28px; height: 1px;
+  background: currentColor;
+  display: inline-block;
+}
+.eyebrow.ember { color: var(--ember); }
+
+/* Gold/ember accent text */
+.accent-gold { color: var(--gold); }
+.accent-ember { color: var(--ember); }
+
+/* ===== MOTION PRIMITIVES (vanilla scroll reveal) ===== */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.9s var(--ease-out),
+    transform 0.9s var(--ease-out);
+  will-change: transform, opacity;
+}
+[data-reveal].in {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-reveal-delay="1"] { transition-delay: 80ms; }
+[data-reveal-delay="2"] { transition-delay: 160ms; }
+[data-reveal-delay="3"] { transition-delay: 240ms; }
+[data-reveal-delay="4"] { transition-delay: 320ms; }
+[data-reveal-delay="5"] { transition-delay: 400ms; }
+[data-reveal-delay="6"] { transition-delay: 480ms; }
+
+[data-reveal="slide-right"] {
+  transform: translateX(-48px);
+}
+[data-reveal="slide-right"].in {
+  transform: translateX(0);
+}
+
+[data-reveal="scale"] {
+  transform: scale(0.94);
+}
+[data-reveal="scale"].in {
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ===== AMBIENT BACKGROUND ATMOSPHERE ===== */
+.bg-grain {
+  position: relative;
+}
+.bg-grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+/* ===== HORIZONTAL DIVIDERS (UPM "section-label" pattern) ===== */
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-hi), transparent);
+  margin: 0;
+}
+
+/* ===== GLASS CARD (Cinema Mobile pattern) ===== */
+.glass {
+  background: rgba(26, 26, 31, 0.55);
+  backdrop-filter: var(--blur-card);
+  -webkit-backdrop-filter: var(--blur-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
