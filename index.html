@@ -1,30 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#050507" />
-<title>Skyline Drones — Aerial cleaning &amp; firefighting (Philippines)</title>
-<meta name="description" content="Skyline Drones — the Philippines' premium aerial services operator. Drone-powered cleaning, inspection, and firefighting." />
-<link rel="icon" href="./assets/logo-light.png" type="image/png" />
-<meta http-equiv="refresh" content="0; url=./variant-a/" />
-<link rel="canonical" href="./variant-a/" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Skyline Drones v2 — Variant Review</title>
+<meta name="description" content="Choose between Variant A (Industrial Cinematic) and Variant B (Editorial Reinvention) for the Skyline Drones v2 site." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  html, body { height: 100%; margin: 0; background: #050507; color: #F5F5F7; font-family: Calibri, "Segoe UI", Arial, sans-serif; }
-  .wrap { min-height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px; padding: 40px; text-align: center; }
-  .wrap img { width: 64px; height: 64px; opacity: 0.9; }
-  .wrap h1 { font-family: "Arial Black", Arial, sans-serif; text-transform: uppercase; letter-spacing: -0.01em; font-size: 28px; margin: 0; }
-  .wrap p { color: #9A9AA3; margin: 0; max-width: 480px; line-height: 1.5; font-size: 15px; }
-  .wrap a { display: inline-block; margin-top: 12px; padding: 14px 22px; background: #E8B84B; color: #050507; text-decoration: none; border-radius: 999px; font-weight: 700; font-family: "Arial Black", Arial, sans-serif; text-transform: uppercase; font-size: 13px; letter-spacing: 0.08em; }
+  :root {
+    --ink: #0A0A0C;
+    --bone: #FBF8F3;
+    --gold: #E8B84B;
+    --ember: #D9362B;
+    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--ink); color: var(--bone); font-family: var(--sans); -webkit-font-smoothing: antialiased; min-height: 100vh; }
+  body { display: flex; flex-direction: column; }
+  a { color: inherit; text-decoration: none; }
+
+  .hdr { padding: 24px clamp(20px, 4vw, 56px); display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid rgba(251,248,243,0.18); }
+  .hdr .brand { font-family: var(--serif); font-weight: 400; font-size: 22px; letter-spacing: -0.02em; }
+  .hdr .meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.6; }
+
+  .wrap { flex: 1; padding: clamp(48px, 8vh, 96px) clamp(20px, 4vw, 56px); max-width: 1640px; margin: 0 auto; width: 100%; }
+
+  .lead { max-width: 720px; margin-bottom: clamp(48px, 8vw, 96px); }
+  .lead .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+  .lead h1 { font-family: var(--serif); font-weight: 300; font-variation-settings: "opsz" 144; font-size: clamp(40px, 6vw, 88px); line-height: 0.98; letter-spacing: -0.025em; margin: 0 0 24px; }
+  .lead h1 em { font-style: italic; font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1; color: var(--ember); }
+  .lead p { font-family: var(--sans); font-size: 18px; line-height: 1.55; color: rgba(251,248,243,0.7); margin: 0; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 880px) { .grid { grid-template-columns: 1fr; } }
+
+  .card { position: relative; overflow: hidden; border: 1px solid rgba(251,248,243,0.18); padding: clamp(32px, 4vw, 56px); display: flex; flex-direction: column; gap: 28px; transition: border-color .3s, transform .4s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; }
+  .card:hover { border-color: rgba(251,248,243,0.5); transform: translateY(-4px); }
+  .card.a:hover { border-color: var(--gold); }
+  .card.b:hover { border-color: var(--ember); }
+
+  .card .tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+  .card.b .tag { color: var(--ember); }
+
+  .card .title { font-family: var(--serif); font-weight: 400; font-variation-settings: "opsz" 144; font-size: clamp(36px, 4vw, 64px); line-height: 0.98; letter-spacing: -0.02em; }
+  .card .title em { font-style: italic; font-variation-settings: "opsz" 144, "WONK" 1; }
+  .card.a .title em { color: var(--gold); }
+  .card.b .title em { color: var(--ember); }
+
+  .card .desc { font-family: var(--sans); font-size: 16px; line-height: 1.55; color: rgba(251,248,243,0.75); max-width: 38ch; }
+
+  .card .specs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(251,248,243,0.18); }
+  .card .specs div span { display: block; color: rgba(251,248,243,0.5); margin-bottom: 4px; }
+  .card .specs div strong { color: var(--bone); font-weight: 500; font-size: 13px; }
+
+  .card .cta { display: inline-flex; align-items: center; gap: 12px; font-family: var(--mono); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; padding: 16px 24px; align-self: flex-start; transition: all .3s; }
+  .card.a .cta { background: var(--gold); color: var(--ink); }
+  .card.a .cta:hover { background: var(--bone); }
+  .card.b .cta { background: var(--ember); color: var(--bone); }
+  .card.b .cta:hover { background: var(--bone); color: var(--ink); }
+  .card .cta::after { content: "→"; transition: transform .3s; }
+  .card:hover .cta::after { transform: translateX(6px); }
+
+  .swatch-row { display: flex; gap: 6px; }
+  .swatch { width: 32px; height: 32px; border: 1px solid rgba(251,248,243,0.1); }
+
+  .ftr { padding: 24px clamp(20px, 4vw, 56px); border-top: 1px solid rgba(251,248,243,0.18); font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(251,248,243,0.5); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <img src="./assets/logo-light.png" alt="Skyline Drones" />
-  <h1>Skyline Drones</h1>
-  <p>Loading the experience. If you're not redirected automatically:</p>
-  <a href="./variant-a/">Enter site</a>
-</div>
-<script>window.location.replace("./variant-a/");</script>
+
+<header class="hdr">
+  <div class="brand">Skyline <span style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; color: var(--ember); margin-left: 8px; text-transform: uppercase;">v2 Review</span></div>
+  <div class="meta">Internal preview · 13 June 2026</div>
+</header>
+
+<main class="wrap">
+  <div class="lead">
+    <span class="eyebrow">Variant Review</span>
+    <h1>Two takes,<br/>one <em>brand.</em></h1>
+    <p>Two complete site designs for Skyline Drones v2 — built on the same content, the same numbers, the same divisions. Pick the one that fits the room. Open both. Compare side by side.</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- ============== VARIANT A ============== -->
+    <a href="./variant-a/index.html" class="card a">
+      <span class="tag">Variant A · Industrial Cinematic</span>
+      <div class="title">Cleaning the <em>untouchable.</em><br/>Fighting the <em>unreachable.</em></div>
+      <p class="desc">Bold Arial Black headlines on deep ink. Gold as the protagonist, ember as the accent. Cinematic hero, magnetic CTAs, GSAP scroll storytelling. Reads like an industrial flagship.</p>
+
+      <div class="swatch-row">
+        <div class="swatch" style="background: #050507;"></div>
+        <div class="swatch" style="background: #E8B84B;"></div>
+        <div class="swatch" style="background: #D9362B;"></div>
+        <div class="swatch" style="background: #F5F1E8;"></div>
+      </div>
+
+      <div class="specs">
+        <div><span>Type</span><strong>Arial Black + Calibri</strong></div>
+        <div><span>Mood</span><strong>Industrial flagship</strong></div>
+        <div><span>Layout</span><strong>Centred, 12-col</strong></div>
+        <div><span>Motion</span><strong>Magnetic, cinematic</strong></div>
+      </div>
+
+      <span class="cta">Open Variant A</span>
+    </a>
+
+    <!-- ============== VARIANT B ============== -->
+    <a href="./variant-b/index.html" class="card b">
+      <span class="tag">Variant B · Editorial Reinvention</span>
+      <div class="title">The <em>untouchable,</em><br/>made <em>routine.</em></div>
+      <p class="desc">Fraunces serif on warm bone paper. Ember as the protagonist. Numbered chapters, magazine spreads, italic pull-quotes, asymmetric grids. Reads like a quarterly publication.</p>
+
+      <div class="swatch-row">
+        <div class="swatch" style="background: #FBF8F3;"></div>
+        <div class="swatch" style="background: #D9362B;"></div>
+        <div class="swatch" style="background: #14110D;"></div>
+        <div class="swatch" style="background: #F4EFE5;"></div>
+      </div>
+
+      <div class="specs">
+        <div><span>Type</span><strong>Fraunces + Inter + Mono</strong></div>
+        <div><span>Mood</span><strong>Editorial bureau</strong></div>
+        <div><span>Layout</span><strong>Asymmetric, chaptered</strong></div>
+        <div><span>Motion</span><strong>Restrained, typographic</strong></div>
+      </div>
+
+      <span class="cta">Open Variant B</span>
+    </a>
+
+  </div>
+</main>
+
+<footer class="ftr">
+  <span>Skyline Drones v2 · Variant Review</span>
+  <span>Both wired to FormSubmit → skylinedrones.ph@gmail.com</span>
+  <span>Same content · Two visual languages</span>
+</footer>
+
 </body>
 </html>
