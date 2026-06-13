@@ -1,212 +1,229 @@
-/* ===================================================================
-   SKYLINE DRONES — v2 DESIGN TOKENS
-   Brand-consistent (Arial Black + Calibri) + premium motion ready
-   =================================================================== */
+/* =====================================================
+   Skyline Drones v2 — Design Tokens
+   Premium B2B industrial · cinematic dark · gold + ember
+   ===================================================== */
 
 :root {
-  /* —— Brand Color System —— */
-  --gold: #E8B84B;
-  --gold-bright: #F5C95C;
-  --gold-deep: #B8953E;
-  --gold-glow: rgba(232, 184, 75, 0.18);
+  /* ---- Brand color palette ---- */
+  --ink-900: #050507;          /* deepest background, never pure black */
+  --ink-850: #0A0A0D;          /* card/panel background */
+  --ink-800: #11111A;          /* elevated surface */
+  --ink-700: #1A1A24;          /* divider zone */
+  --ink-600: #2A2A36;          /* subtle border */
+  --ink-500: #4A4A55;          /* low-contrast text */
+  --ink-400: #6E6E78;          /* secondary text */
+  --ink-300: #9A9AA3;          /* tertiary text */
+  --ink-200: #C8C8D0;          /* near-white text */
+  --ink-100: #F5F5F7;          /* primary text */
 
-  --ember: #D9362B;
-  --ember-bright: #FF6B5A;
-  --ember-deep: #A82820;
-  --ember-glow: rgba(217, 54, 43, 0.20);
+  --gold-100: #FFE8A8;
+  --gold-200: #F5D27C;
+  --gold-400: #E8B84B;         /* primary brand gold (cleaning division) */
+  --gold-500: #D9A332;
+  --gold-600: #B58520;
+  --gold-glow: rgba(232, 184, 75, 0.35);
 
-  /* —— Surface System (deep cinema dark, never pure black) —— */
-  --bg-deep:   #050507;
-  --bg-base:   #0A0A0C;
-  --bg-elev:   #111114;
-  --bg-elev-2: #16161A;
-  --card:      #1A1A1F;
-  --card-hi:   #22222A;
-  --border:    rgba(255,255,255,0.06);
-  --border-hi: rgba(255,255,255,0.12);
-  --hairline:  rgba(255,255,255,0.04);
+  --ember-100: #FFB8AE;
+  --ember-300: #FF6B5E;
+  --ember-500: #D9362B;        /* primary brand ember (firefighting division) */
+  --ember-700: #A8251C;
+  --ember-glow: rgba(217, 54, 43, 0.35);
 
-  /* —— Foreground —— */
-  --fg:        #F4F4F6;
-  --fg-muted:  #B6B6BD;
-  --fg-dim:    #8C8C95;
-  --fg-faint:  #5C5C66;
+  --paper: #F8F5EE;            /* warm off-white for editorial moments */
+  --paper-warm: #ECE6D8;
 
-  /* —— Type System (kept Arial Black + Calibri) —— */
-  --font-display: 'Arial Black', 'Arial Bold', 'Helvetica Neue', Arial, sans-serif;
-  --font-body:    Calibri, 'Trebuchet MS', Arial, sans-serif;
-  --font-mono:    'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+  /* ---- Surface effects ---- */
+  --border-faint: rgba(255, 255, 255, 0.06);
+  --border-soft:  rgba(255, 255, 255, 0.10);
+  --border-mid:   rgba(255, 255, 255, 0.18);
+  --border-gold:  rgba(232, 184, 75, 0.30);
+  --border-ember: rgba(217, 54, 43, 0.35);
 
-  --text-eyebrow: clamp(10px, 0.75vw, 12px);
-  --text-xs:      12px;
-  --text-sm:      14px;
-  --text-base:    16px;
-  --text-lg:      18px;
-  --text-xl:      clamp(20px, 1.5vw, 24px);
-  --text-2xl:     clamp(26px, 2.2vw, 32px);
-  --text-3xl:     clamp(32px, 3vw, 44px);
-  --text-4xl:     clamp(40px, 4.5vw, 64px);
-  --text-hero:    clamp(48px, 7vw, 112px);
+  --glass-tint: rgba(255, 255, 255, 0.02);
+  --glass-tint-strong: rgba(255, 255, 255, 0.04);
 
-  /* —— Spacing —— */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 24px;
-  --space-6: 32px;
-  --space-7: 48px;
-  --space-8: 64px;
-  --space-9: 96px;
-  --space-10: 128px;
-  --space-section: clamp(80px, 12vw, 160px);
+  /* ---- Typography ---- */
+  --font-display: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --font-body: Calibri, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
 
-  /* —— Motion (Expo.out, the premium curve) —— */
-  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-out-soft:cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-in:      cubic-bezier(0.7, 0, 0.84, 0);
-  --ease-snap:    cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* Type scale — fluid clamp(min, preferred, max) */
+  --text-tag:      11px;
+  --text-eyebrow:  12px;
+  --text-meta:     13px;
+  --text-body:     clamp(15px, 0.95vw + 8px, 17px);
+  --text-lede:     clamp(17px, 1.1vw + 10px, 21px);
+  --text-h6:       clamp(15px, 0.95vw + 8px, 17px);
+  --text-h5:       clamp(18px, 1.0vw + 10px, 22px);
+  --text-h4:       clamp(22px, 1.4vw + 12px, 30px);
+  --text-h3:       clamp(28px, 2.0vw + 14px, 44px);
+  --text-h2:       clamp(36px, 3.6vw + 16px, 72px);
+  --text-h1:       clamp(48px, 5.5vw + 18px, 108px);
+  --text-display:  clamp(64px, 9vw + 20px, 168px);
 
-  --dur-fast:   180ms;
-  --dur-base:   320ms;
-  --dur-slow:   620ms;
-  --dur-epic:   1100ms;
+  /* ---- Spacing scale (8px base) ---- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --space-40: 160px;
+  --space-48: 192px;
 
-  /* —— Effects —— */
-  --radius-xs: 4px;
-  --radius-sm: 8px;
-  --radius:    14px;
-  --radius-lg: 20px;
-  --radius-pill: 999px;
+  /* ---- Layout ---- */
+  --container: 1320px;
+  --container-narrow: 1080px;
+  --container-prose: 720px;
+  --page-pad: clamp(20px, 4vw, 48px);
+  --section-pad: clamp(80px, 10vw, 160px);
 
-  --shadow-card:   0 8px 24px rgba(0,0,0,0.35);
-  --shadow-pop:    0 24px 64px rgba(0,0,0,0.55);
-  --shadow-gold:   0 16px 48px rgba(232,184,75,0.18);
-  --shadow-ember:  0 16px 48px rgba(217,54,43,0.18);
+  /* ---- Motion ---- */
+  --ease-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-power: cubic-bezier(0.83, 0, 0.17, 1);
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in:    cubic-bezier(0.55, 0, 0.1, 1);
+  --t-fast:  0.25s;
+  --t-mid:   0.6s;
+  --t-slow:  1.2s;
 
-  --blur-card: blur(20px) saturate(140%);
+  /* ---- Radii ---- */
+  --r-sm:  6px;
+  --r-md:  12px;
+  --r-lg:  20px;
+  --r-xl:  28px;
+  --r-pill: 999px;
 
-  --container: 1280px;
-  --container-wide: 1440px;
+  /* ---- Z-index ---- */
+  --z-nav:    100;
+  --z-toast:  120;
+  --z-modal:  140;
+  --z-cursor: 160;
 }
 
-/* ===== RESET ===== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+/* =====================================================
+   Reset
+   ===================================================== */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: auto; }
 body {
+  background: var(--ink-900);
+  color: var(--ink-100);
   font-family: var(--font-body);
-  background: var(--bg-deep);
-  color: var(--fg);
-  font-size: var(--text-base);
-  line-height: 1.6;
-  overflow-x: hidden;
+  font-size: var(--text-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
-img, video { max-width: 100%; display: block; }
+
+img, video, svg { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
-button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
-::selection { background: var(--gold); color: var(--bg-deep); }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+input, textarea, select { font: inherit; color: inherit; }
+ul, ol { list-style: none; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.005em;
-  text-transform: uppercase;
-}
+::selection { background: var(--gold-400); color: var(--ink-900); }
 
-/* ===== UTILITIES ===== */
-.container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
-.container-wide { max-width: var(--container-wide); margin: 0 auto; padding: 0 24px; }
+/* =====================================================
+   Type primitives
+   ===================================================== */
+.display { font-family: var(--font-display); font-size: var(--text-display); line-height: 0.9; letter-spacing: -0.025em; text-transform: uppercase; }
+.h1 { font-family: var(--font-display); font-size: var(--text-h1); line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase; }
+.h2 { font-family: var(--font-display); font-size: var(--text-h2); line-height: 1.0; letter-spacing: -0.015em; text-transform: uppercase; }
+.h3 { font-family: var(--font-display); font-size: var(--text-h3); line-height: 1.05; letter-spacing: -0.01em; text-transform: uppercase; }
+.h4 { font-family: var(--font-display); font-size: var(--text-h4); line-height: 1.1;  letter-spacing: -0.005em; text-transform: uppercase; }
+.h5 { font-family: var(--font-display); font-size: var(--text-h5); line-height: 1.15; text-transform: uppercase; }
 
 .eyebrow {
   font-family: var(--font-display);
   font-size: var(--text-eyebrow);
-  letter-spacing: 0.24em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--gold);
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
+  color: var(--gold-400);
 }
-.eyebrow::before {
-  content: '';
-  width: 28px; height: 1px;
-  background: currentColor;
-  display: inline-block;
-}
-.eyebrow.ember { color: var(--ember); }
+.eyebrow.ember { color: var(--ember-300); }
+.eyebrow.muted { color: var(--ink-400); }
 
-/* Gold/ember accent text */
-.accent-gold { color: var(--gold); }
-.accent-ember { color: var(--ember); }
-
-/* ===== MOTION PRIMITIVES (vanilla scroll reveal) ===== */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(32px);
-  transition:
-    opacity 0.9s var(--ease-out),
-    transform 0.9s var(--ease-out);
-  will-change: transform, opacity;
-}
-[data-reveal].in {
-  opacity: 1;
-  transform: translateY(0);
-}
-[data-reveal-delay="1"] { transition-delay: 80ms; }
-[data-reveal-delay="2"] { transition-delay: 160ms; }
-[data-reveal-delay="3"] { transition-delay: 240ms; }
-[data-reveal-delay="4"] { transition-delay: 320ms; }
-[data-reveal-delay="5"] { transition-delay: 400ms; }
-[data-reveal-delay="6"] { transition-delay: 480ms; }
-
-[data-reveal="slide-right"] {
-  transform: translateX(-48px);
-}
-[data-reveal="slide-right"].in {
-  transform: translateX(0);
+.meta {
+  font-family: var(--font-display);
+  font-size: var(--text-meta);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-300);
 }
 
-[data-reveal="scale"] {
-  transform: scale(0.94);
-}
-[data-reveal="scale"].in {
-  transform: scale(1);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  [data-reveal] { opacity: 1; transform: none; transition: none; }
-  html { scroll-behavior: auto; }
+.lede {
+  font-size: var(--text-lede);
+  line-height: 1.5;
+  color: var(--ink-200);
+  max-width: 60ch;
 }
 
-/* ===== AMBIENT BACKGROUND ATMOSPHERE ===== */
-.bg-grain {
-  position: relative;
-}
-.bg-grain::before {
-  content: '';
-  position: absolute;
-  inset: 0;
+.text-gold  { color: var(--gold-400); }
+.text-ember { color: var(--ember-300); }
+.text-mute  { color: var(--ink-300); }
+
+/* =====================================================
+   Layout primitives
+   ===================================================== */
+.container       { width: 100%; max-width: var(--container);        margin: 0 auto; padding: 0 var(--page-pad); }
+.container-narrow{ width: 100%; max-width: var(--container-narrow); margin: 0 auto; padding: 0 var(--page-pad); }
+.container-prose { width: 100%; max-width: var(--container-prose);  margin: 0 auto; padding: 0 var(--page-pad); }
+
+.section { padding: var(--section-pad) 0; }
+.section-tight { padding: var(--space-20) 0; }
+
+.grid { display: grid; gap: var(--space-8); }
+.flex { display: flex; }
+
+/* =====================================================
+   Background texture (film grain)
+   ===================================================== */
+.grain {
+  position: fixed; inset: 0;
   pointer-events: none;
-  opacity: 0.04;
+  z-index: 1;
+  opacity: 0.6;
   mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  z-index: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.045 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
-/* ===== HORIZONTAL DIVIDERS (UPM "section-label" pattern) ===== */
-.divider {
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--border-hi), transparent);
-  margin: 0;
+/* =====================================================
+   Reveal primitives (progressive — content visible by default)
+   ===================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+    transition: opacity 0.9s var(--ease-expo), transform 0.9s var(--ease-expo);
+    will-change: opacity, transform;
+  }
+  .js [data-reveal="fade"] { transform: none; }
+  .js [data-reveal="left"]  { transform: translate3d(-32px, 0, 0); }
+  .js [data-reveal="right"] { transform: translate3d(32px,  0, 0); }
+  .js [data-reveal].is-in {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  .js [data-reveal-delay="1"] { transition-delay: 0.08s; }
+  .js [data-reveal-delay="2"] { transition-delay: 0.16s; }
+  .js [data-reveal-delay="3"] { transition-delay: 0.24s; }
+  .js [data-reveal-delay="4"] { transition-delay: 0.32s; }
+  .js [data-reveal-delay="5"] { transition-delay: 0.40s; }
 }
-
-/* ===== GLASS CARD (Cinema Mobile pattern) ===== */
-.glass {
-  background: rgba(26, 26, 31, 0.55);
-  backdrop-filter: var(--blur-card);
-  -webkit-backdrop-filter: var(--blur-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] { opacity: 1 !important; transform: none !important; }
 }

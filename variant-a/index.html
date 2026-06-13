@@ -1,467 +1,471 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Skyline Drones — Elevate to New Heights | Variant A</title>
-<meta name="description" content="Drone-powered facade cleaning and aerial firefighting support across the Philippines. Zero workers at height. Cinematic precision.">
-<meta property="og:title" content="Skyline Drones — Elevate to New Heights">
-<meta property="og:description" content="Autonomous drone services for every facade and every emergency. Manila, Philippines.">
-<meta property="og:type" content="website">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="icon" href="../assets/logo-light.png" type="image/png">
-
-<link rel="stylesheet" href="../styles/tokens.css">
-<link rel="stylesheet" href="../styles/components.css">
-<link rel="stylesheet" href="./styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#050507" />
+<title>Skyline Drones — Aerial Cleaning & Firefighting · Manila, Philippines</title>
+<meta name="description" content="Skyline Drones is the Philippines' premium aerial services operator — facade and solar cleaning, structural firefighting, and high-altitude inspection. CAAP-certified. Fully insured. Zero workers at height." />
+<link rel="icon" href="../assets/logo-light.png" type="image/png" />
+<link rel="preload" as="image" href="../assets/hero-cleaning.png" />
+<link rel="stylesheet" href="../styles/tokens.css" />
+<link rel="stylesheet" href="../styles/components.css" />
+<link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
 
-<!-- ============== NAV ============== -->
-<nav class="nav" id="nav">
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" role="banner">
   <div class="nav-inner">
-    <a href="#" class="nav-brand">
-      <img src="../assets/logo-light.png" alt="Skyline Drones">
-      <div class="nav-brand-text">
+    <a href="./" class="nav-brand" aria-label="Skyline Drones home">
+      <img src="../assets/logo-light.png" alt="" />
+      <span class="nav-brand-text">
         <span class="nav-brand-name">Skyline Drones</span>
-        <span class="nav-brand-tag">Elevate to New Heights</span>
-      </div>
+        <span class="nav-brand-tag">Elevate to new heights</span>
+      </span>
     </a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#divisions" class="nav-cleaning">Cleaning</a></li>
-      <li><a href="#divisions" class="nav-firefighting">Firefighting</a></li>
-      <li><a href="#how">How It Works</a></li>
-      <li><a href="#contact" class="nav-cta" data-magnetic="8">Brief Us</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="./cleaning.html"     class="nav-link is-cleaning">Cleaning</a>
+      <a href="./firefighting.html" class="nav-link is-firefight">Firefighting</a>
+      <a href="#how"     class="nav-link">How It Works</a>
+      <a href="#why"     class="nav-link">Why Skyline</a>
+      <a href="./contact.html" class="nav-cta">
+        Begin a brief <span class="btn-arrow"></span>
+      </a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span>
     </button>
   </div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#about">About</a>
-  <a href="#divisions" class="nav-cleaning">Cleaning</a>
-  <a href="#divisions" class="nav-firefighting">Firefighting</a>
-  <a href="#how">How It Works</a>
-  <a href="#contact">Brief Us</a>
-</div>
+</header>
 
-<!-- ============== HERO ============== -->
-<section class="hero-a">
-  <video class="hero-a-video" autoplay muted loop playsinline poster="../assets/firefighting-hero.jpg">
-    <source src="../assets/hero-bg.mp4" type="video/mp4">
-  </video>
-  <div class="hero-a-overlay"></div>
-  <div class="hero-a-content">
-    <p class="hero-a-breadcrumb" data-reveal>Manila, Philippines · Est. 2026</p>
-    <h1 data-reveal data-reveal-delay="1">EVERY <span class="accent-gold">SURFACE</span>.<br>EVERY <span class="accent-gold">HEIGHT</span>.<br>ZERO <span class="accent-gold">RISK</span>.</h1>
-    <p class="hero-a-sub" data-reveal data-reveal-delay="2">Drone-powered facade cleaning &amp; aerial firefighting support.</p>
-    <p class="hero-a-lede" data-reveal data-reveal-delay="3">Autonomous fleets servicing high-rises, hotels, government, airports and critical infrastructure across the Philippines — at up to 160 metres, without a single worker at height.</p>
-    <div class="hero-a-buttons" data-reveal data-reveal-delay="4">
-      <a href="#contact" class="btn btn-gold" data-magnetic="10">Brief us on your building <span class="btn-arrow">→</span></a>
-      <a href="#divisions" class="btn btn-ghost">See divisions</a>
+<main>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="hero-media" aria-hidden="true">
+    <img class="hero-still" src="../assets/hero-cleaning.png" alt="" />
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="../assets/hero-cleaning.png">
+      <source src="../assets/hero-video.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-scrim"></div>
+  </div>
+
+  <div class="hero-content container">
+
+    <div class="hero-meta">
+      <span class="meta">Manila · Philippines</span>
+      <span class="hero-meta-dot"></span>
+      <span class="meta">CAAP-certified operator</span>
     </div>
-  </div>
-  <div class="hero-a-meta">
-    <div class="hero-a-meta-strip">
-      <span><strong>160m</strong>Max altitude</span>
-      <span><strong>10×</strong>Faster vs manual</span>
-      <span><strong>0</strong>Workers at height</span>
-      <span><strong>Full</strong>Insurance &amp; CAAP</span>
+
+    <h1 class="hero-headline">
+      <span class="hero-line">Cleaning the</span>
+      <span class="hero-line"><em>untouchable.</em></span>
+      <span class="hero-line">Fighting the</span>
+      <span class="hero-line"><em class="ember">unreachable.</em></span>
+    </h1>
+
+    <p class="hero-lede">
+      We are the Philippines' premium aerial services operator —
+      replacing ropes and scaffolds with industrial drones that work
+      where humans shouldn't. Up to <strong>160 meters</strong>. Zero workers at height.
+      Fully insured.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="./contact.html" class="btn btn-gold" data-magnetic="0.15">
+        Request a quote <span class="btn-arrow"></span>
+      </a>
+      <a href="#divisions" class="btn btn-ghost">
+        Explore divisions <span class="btn-arrow"></span>
+      </a>
     </div>
-    <div class="hero-a-scroll">Scroll</div>
-  </div>
-</section>
 
-<!-- ============== TICKER ============== -->
-<section class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span class="ticker-item">Commercial Towers <span class="accent">★</span></span>
-    <span class="ticker-item">High-Rise Hotels</span>
-    <span class="ticker-item">Government &amp; Civic</span>
-    <span class="ticker-item">Airports &amp; Aviation</span>
-    <span class="ticker-item">Industrial Facilities</span>
-    <span class="ticker-item">Public Infrastructure</span>
-    <span class="ticker-item">Refineries &amp; Energy</span>
-    <span class="ticker-item">Stadiums &amp; Civic</span>
-    <!-- duplicate for seamless loop -->
-    <span class="ticker-item">Commercial Towers <span class="accent">★</span></span>
-    <span class="ticker-item">High-Rise Hotels</span>
-    <span class="ticker-item">Government &amp; Civic</span>
-    <span class="ticker-item">Airports &amp; Aviation</span>
-    <span class="ticker-item">Industrial Facilities</span>
-    <span class="ticker-item">Public Infrastructure</span>
-    <span class="ticker-item">Refineries &amp; Energy</span>
-    <span class="ticker-item">Stadiums &amp; Civic</span>
-  </div>
-</section>
-
-<!-- ============== DIVISIONS ============== -->
-<section class="divisions" id="divisions">
-  <div class="container-wide">
-    <div class="divisions-head">
-      <div data-reveal>
-        <p class="eyebrow">Two Divisions · One Sky</p>
-        <h2>BUILT FOR <span class="accent-gold">PRECISION</span>.<br>READY FOR <span class="accent-ember">CRISIS</span>.</h2>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num"><span data-count="160" data-count-suffix="m">160m</span></span>
+        <span class="hero-stat-label">Max altitude</span>
       </div>
-      <p data-reveal data-reveal-delay="1">Skyline operates two parallel fleets — engineered for very different missions, sharing the same standard of safety, certification, and operational discipline.</p>
+      <div class="hero-stat">
+        <span class="hero-stat-num"><span data-count="10" data-count-prefix="" data-count-suffix="×">10×</span></span>
+        <span class="hero-stat-label">Faster vs. manual</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num"><span data-count="0">0</span></span>
+        <span class="hero-stat-label">Workers at height</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">100<span class="hero-stat-suffix">%</span></span>
+        <span class="hero-stat-label">Insured + CAAP</span>
+      </div>
     </div>
+  </div>
+
+  <a href="#divisions" class="hero-scroll" aria-label="Scroll to divisions">
+    <span class="meta">Scroll</span>
+    <span class="hero-scroll-line"></span>
+  </a>
+</section>
+
+<!-- ===================== MARQUEE ===================== -->
+<section class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Glass facades</span><span class="marquee-dot">●</span>
+    <span class="marquee-item">Solar arrays</span><span class="marquee-dot">●</span>
+    <span class="marquee-item">High-rise residential</span><span class="marquee-dot">●</span>
+    <span class="marquee-item">Industrial firefighting</span><span class="marquee-dot">●</span>
+    <span class="marquee-item">Refinery response</span><span class="marquee-dot">●</span>
+    <span class="marquee-item">Forest wildfire</span><span class="marquee-dot">●</span>
+    <span class="marquee-item">Stadium roofs</span><span class="marquee-dot">●</span>
+    <span class="marquee-item">Aerial inspection</span><span class="marquee-dot">●</span>
+    <!-- duplicate for loop -->
+    <span class="marquee-item">Glass facades</span><span class="marquee-dot">●</span>
+    <span class="marquee-item">Solar arrays</span><span class="marquee-dot">●</span>
+    <span class="marquee-item">High-rise residential</span><span class="marquee-dot">●</span>
+    <span class="marquee-item">Industrial firefighting</span><span class="marquee-dot">●</span>
+    <span class="marquee-item">Refinery response</span><span class="marquee-dot">●</span>
+    <span class="marquee-item">Forest wildfire</span><span class="marquee-dot">●</span>
+    <span class="marquee-item">Stadium roofs</span><span class="marquee-dot">●</span>
+    <span class="marquee-item">Aerial inspection</span><span class="marquee-dot">●</span>
+  </div>
+</section>
+
+<!-- ===================== DIVISIONS ===================== -->
+<section class="divisions section" id="divisions">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Two divisions · one operator</span>
+      <h2 class="h2 section-head-title">
+        From <span class="text-gold">facade shine</span> to
+        <span class="text-ember">structural fire.</span>
+      </h2>
+      <p class="lede section-head-lede">
+        Skyline runs two specialized arms under one CAAP licence. Same crew discipline.
+        Same insurance umbrella. Two very different missions.
+      </p>
+    </div>
+
     <div class="division-grid">
-      <a href="#cleaning" class="division-card cleaning" data-reveal>
-        <div>
-          <p class="division-tag">Division 01 · Building Services</p>
-          <h3 class="division-title">FACADE<br>CLEANING</h3>
-          <p class="division-desc">Autonomous drone cleaning for glass, cladding, concrete, stone and metal — at every height, without scaffolding or rope-access teams.</p>
+      <a href="./cleaning.html" class="division division-gold" data-reveal>
+        <div class="division-media">
+          <img src="../assets/cleaning-action.png" alt="Drone cleaning skyscraper facade" />
+          <div class="division-glow"></div>
         </div>
-        <div>
-          <div class="division-stats">
-            <div class="division-stat"><strong>1,000–2,000</strong><span>sqm / hour</span></div>
-            <div class="division-stat"><strong>30–60 min</strong><span>setup time</span></div>
-            <div class="division-stat"><strong>55</strong><span>stories max</span></div>
-          </div>
-          <span class="btn btn-ghost-gold">Explore cleaning <span class="btn-arrow">→</span></span>
-        </div>
-      </a>
-      <a href="#firefighting" class="division-card firefighting" data-reveal data-reveal-delay="1">
-        <div>
-          <p class="division-tag">Division 02 · Emergency Response</p>
-          <h3 class="division-title">AERIAL<br>FIREFIGHTING</h3>
-          <p class="division-desc">Aerial reconnaissance, thermal mapping, and tactical drop support partnered with fire services — for high-rise, industrial and wildland response.</p>
-        </div>
-        <div>
-          <div class="division-stats">
-            <div class="division-stat"><strong>4K + IR</strong><span>thermal feed</span></div>
-            <div class="division-stat"><strong>&lt;90 sec</strong><span>airborne</span></div>
-            <div class="division-stat"><strong>24/7</strong><span>on-call</span></div>
-          </div>
-          <span class="btn btn-ghost-ember">Explore firefighting <span class="btn-arrow">→</span></span>
+        <div class="division-body">
+          <span class="eyebrow">Division 01 · Aerial cleaning</span>
+          <h3 class="h3 division-title">Wash. Polish. <em>Without a single worker leaving the ground.</em></h3>
+          <ul class="division-list">
+            <li>Glass-curtain facades up to 160m</li>
+            <li>Solar arrays · industrial rooftops</li>
+            <li>Residential towers · stadium roofs</li>
+            <li>Heritage and stone-clad exteriors</li>
+          </ul>
+          <span class="btn btn-outline-gold">Cleaning division <span class="btn-arrow"></span></span>
         </div>
       </a>
-    </div>
-  </div>
-</section>
 
-<!-- ============== STATS ============== -->
-<section class="stats">
-  <div class="stats-grid">
-    <div class="stats-item" data-reveal>
-      <div class="stats-num">Zero</div>
-      <div class="stats-label">Workers at height</div>
-    </div>
-    <div class="stats-item" data-reveal data-reveal-delay="1">
-      <div class="stats-num"><span data-countup="10">0</span>×</div>
-      <div class="stats-label">Faster than manual</div>
-    </div>
-    <div class="stats-item" data-reveal data-reveal-delay="2">
-      <div class="stats-num"><span data-countup="160">0</span>m</div>
-      <div class="stats-label">Max altitude</div>
-    </div>
-    <div class="stats-item" data-reveal data-reveal-delay="3">
-      <div class="stats-num"><span data-countup="55">0</span></div>
-      <div class="stats-label">Stories serviceable</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== WHO WE ARE ============== -->
-<section class="section section-dark" id="about">
-  <div class="container-wide">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow">Who We Are</p>
-      <h2>INTRODUCING <span class="accent-gold">SKYLINE DRONES</span></h2>
-    </div>
-    <div class="who-grid">
-      <div class="who-text" data-reveal data-reveal-delay="1">
-        <p>Skyline Drones is a Manila-based aerial services company deploying autonomous drone fleets across two divisions — exterior building cleaning and aerial firefighting support.</p>
-        <p>Our commercial-grade fleet services high-rises, hotels, government, airports, industrial facilities and public infrastructure — delivering faster, safer and more cost-effective alternatives to rope-access and scaffolding methods.</p>
-        <p>Whether it's a 5-storey office or a 55-storey tower, Skyline provides full-facade coverage at a fraction of the time and cost — with zero human risk.</p>
-      </div>
-      <div class="surfaces" data-reveal data-reveal-delay="2">
-        <h3>EVERY SURFACE. <span class="accent-gold">NOT JUST WINDOWS.</span></h3>
-        <div class="surfaces-grid">
-          <div class="surface">Glass curtain walls</div>
-          <div class="surface">Natural stone &amp; granite</div>
-          <div class="surface">Metal cladding panels</div>
-          <div class="surface">Terracotta &amp; ceramic</div>
-          <div class="surface">Concrete &amp; precast</div>
-          <div class="surface">Aluminium composite</div>
+      <a href="./firefighting.html" class="division division-ember" data-reveal data-reveal-delay="1">
+        <div class="division-media">
+          <img src="../assets/firefighting-action.png" alt="Drone above industrial fire" />
+          <div class="division-glow"></div>
         </div>
-      </div>
-      <div class="callout" data-reveal>
-        "The entirety of your building — not just the glazing — maintained to the same standard, without a single worker leaving the ground."
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== WHO WE SERVE ============== -->
-<section class="section section-base" id="services">
-  <div class="container-wide">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow">Who We Serve</p>
-      <h2>EVERY <span class="accent-gold">BUILDING TYPE</span></h2>
-    </div>
-    <div class="serve-grid">
-      <div class="serve-card" data-reveal><span class="serve-icon">🏢</span><h3>Commercial Towers</h3><p>Glass &amp; mixed-facade high-rises</p></div>
-      <div class="serve-card" data-reveal data-reveal-delay="1"><span class="serve-icon">🏨</span><h3>Hotels &amp; Resorts</h3><p>Guest-facing, zero disruption</p></div>
-      <div class="serve-card" data-reveal data-reveal-delay="2"><span class="serve-icon">🏛️</span><h3>Government &amp; Civic</h3><p>Compliance-ready, fully certified</p></div>
-      <div class="serve-card" data-reveal data-reveal-delay="3"><span class="serve-icon">✈️</span><h3>Airports &amp; Aviation</h3><p>Complex structures, high traffic</p></div>
-      <div class="serve-card" data-reveal><span class="serve-icon">🛢️</span><h3>Oil &amp; Gas</h3><p>Hazardous-environment access</p></div>
-      <div class="serve-card" data-reveal data-reveal-delay="1"><span class="serve-icon">🏗️</span><h3>Office Campuses</h3><p>Multi-building programs</p></div>
-      <div class="serve-card" data-reveal data-reveal-delay="2"><span class="serve-icon">🏭</span><h3>Industrial &amp; Logistics</h3><p>Warehouses &amp; factories</p></div>
-      <div class="serve-card" data-reveal data-reveal-delay="3"><span class="serve-icon">🏟️</span><h3>Public &amp; Stadiums</h3><p>Bridges &amp; civic facilities</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== PROBLEM ============== -->
-<section class="section section-dark">
-  <div class="container-wide">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow">The Problem</p>
-      <h2>WHY BUILDING OWNERS ARE LOOKING<br>FOR <span class="accent-gold">A BETTER WAY</span></h2>
-    </div>
-    <div class="problem-grid">
-      <div class="problem-card" data-reveal>
-        <span class="problem-tag">High Liability</span>
-        <h3>Legal &amp; Insurance Exposure</h3>
-        <p>Rope-access and scaffolding crews work at extreme heights daily — exposing owners and facility managers to significant liability, premiums, and regulatory risk.</p>
-      </div>
-      <div class="problem-card" data-reveal data-reveal-delay="1">
-        <span class="problem-tag">Excessive Cost</span>
-        <h3>Inflated Maintenance Budgets</h3>
-        <p>Traditional cleaning needs scaffolding, cranes, lifts, or rope teams — all demanding setup, specialised labour, and premium insurance. The result: bloated budgets.</p>
-      </div>
-      <div class="problem-card" data-reveal data-reveal-delay="2">
-        <span class="problem-tag">Operational Disruption</span>
-        <h3>Weeks of Scaffolding</h3>
-        <p>Scaffolding blocks entrances, obstructs signage, disrupts tenants, and takes weeks to erect and dismantle — prolonged friction for buildings and tenants alike.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== HOW IT WORKS ============== -->
-<section class="section section-base" id="how">
-  <div class="container-wide">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow">How It Works</p>
-      <h2>FROM BRIEF TO COMPLETION IN<br><span class="accent-gold">WEEKS, NOT MONTHS</span></h2>
-    </div>
-    <div class="process">
-      <div class="process-step" data-reveal>
-        <div class="process-num">1</div>
-        <h3>Site Assessment</h3>
-        <p>Facade specs, materials &amp; access review</p>
-      </div>
-      <div class="process-step" data-reveal data-reveal-delay="1">
-        <div class="process-num">2</div>
-        <h3>CAAP Approval</h3>
-        <p>Airspace clearance &amp; ground perimeter</p>
-      </div>
-      <div class="process-step" data-reveal data-reveal-delay="2">
-        <div class="process-num">3</div>
-        <h3>Deployment</h3>
-        <p>30–60 min setup, no scaffolding</p>
-      </div>
-      <div class="process-step" data-reveal data-reveal-delay="3">
-        <div class="process-num">4</div>
-        <h3>Autonomous Flight</h3>
-        <p>Monitored by licensed RPIC pilots</p>
-      </div>
-      <div class="process-step" data-reveal data-reveal-delay="4">
-        <div class="process-num">5</div>
-        <h3>Inspection Report</h3>
-        <p>Photos &amp; final report delivered same day</p>
-      </div>
-    </div>
-    <div class="timeline" data-reveal>
-      <div class="timeline-text">A TYPICAL BUILDING CLEANED IN A SINGLE WEEK — VERSUS WEEKS OR MONTHS WITH TRADITIONAL METHODS.</div>
-      <div class="timeline-stats">
-        <div><div class="timeline-stat-v">30–60 min</div><div class="timeline-stat-l">Setup</div></div>
-        <div><div class="timeline-stat-v">2–8 hrs</div><div class="timeline-stat-l">Operations</div></div>
-        <div><div class="timeline-stat-v">Same day</div><div class="timeline-stat-l">Report</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== COMPARISON ============== -->
-<section class="section section-dark">
-  <div class="container-wide">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow">Why Skyline Wins</p>
-      <h2>SKYLINE DRONES VS.<br><span class="accent-gold">TRADITIONAL METHODS</span></h2>
-    </div>
-    <div class="compare-wrap" data-reveal>
-      <table class="compare">
-        <thead><tr><th></th><th>Skyline Drones</th><th>Traditional Methods</th></tr></thead>
-        <tbody>
-          <tr><td>Facade Types</td><td>All surfaces — glass, cladding, concrete, stone &amp; metal</td><td>Glass &amp; accessible surfaces only</td></tr>
-          <tr><td>Worker Safety</td><td>No workers at height — ever</td><td>High daily risk exposure</td></tr>
-          <tr><td>Setup Time</td><td>30 min – 1 hour</td><td>Days to weeks of scaffolding</td></tr>
-          <tr><td>Speed</td><td>1,000 – 2,000 sqm / hour</td><td>~100 sqm / hour</td></tr>
-          <tr><td>Disruption</td><td>None — access maintained</td><td>Blocked entrances, weeks of scaffolding</td></tr>
-          <tr><td>Insurance Liability</td><td>Minimal — fully autonomous</td><td>Very high — workers at risk</td></tr>
-          <tr><td>Max Height</td><td>160 metres / 55 stories</td><td>Limited by rope &amp; scaffold</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ============== SAFETY ============== -->
-<section class="section section-base">
-  <div class="container-wide">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow">Safety &amp; Compliance</p>
-      <h2>FULLY CERTIFIED.<br><span class="accent-gold">FULLY INSURED.</span></h2>
-    </div>
-    <div class="safety-grid">
-      <div class="safety-card" data-reveal>
-        <h3>Licensed Drone Operators</h3>
-        <p>All pilots hold commercial certifications with documented SOPs and pre-flight checklists for every engagement.</p>
-      </div>
-      <div class="safety-card" data-reveal data-reveal-delay="1">
-        <h3>Comprehensive Insurance</h3>
-        <p>Full third-party liability coverage on every engagement — protecting your building, tenants, and the public.</p>
-      </div>
-      <div class="safety-card" data-reveal data-reveal-delay="2">
-        <h3>Urban-Safe Fail-Safes</h3>
-        <p>Geofencing, no-fly buffers, emergency parachutes, auto-land protocols, and blade guards — engineered for dense urban environments.</p>
-      </div>
-      <div class="safety-card" data-reveal data-reveal-delay="3">
-        <h3>Regulatory Compliance</h3>
-        <p>Civil aviation compliance, airspace coordination, and all permits handled by Skyline — so you don't have to.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== CONTACT ============== -->
-<section class="contact" id="contact">
-  <div class="container-wide">
-    <div class="contact-head" data-reveal>
-      <p class="eyebrow">Elevate to New Heights</p>
-      <h2>READY TO SEE WHAT SKYLINE<br>CAN DO <span class="accent-gold">FOR YOUR BUILDING?</span></h2>
-      <p class="contact-sub">Book a free 30-minute consultation — we assess your facade, walk you through the process, and give you a no-obligation cost comparison vs. your current method.</p>
-    </div>
-
-    <div class="contact-methods" data-reveal>
-      <a href="mailto:skylinedrones.ph@gmail.com" class="contact-method">
-        <div class="contact-method-label">Email</div>
-        <div class="contact-method-value">skylinedrones.ph@gmail.com</div>
-      </a>
-      <a href="tel:+639171480498" class="contact-method">
-        <div class="contact-method-label">Phone</div>
-        <div class="contact-method-value">+63 917 148 0498</div>
-      </a>
-      <a href="https://skylinedronesph.com" target="_blank" rel="noopener" class="contact-method">
-        <div class="contact-method-label">Website</div>
-        <div class="contact-method-value">skylinedronesph.com</div>
+        <div class="division-body">
+          <span class="eyebrow ember">Division 02 · Aerial firefighting</span>
+          <h3 class="h3 division-title">First response. <em class="ember">From above. Before the first ladder.</em></h3>
+          <ul class="division-list">
+            <li>High-rise tower &amp; mall fires</li>
+            <li>Refinery, tanker, depot response</li>
+            <li>Informal settlement &amp; warehouse</li>
+            <li>Forest, wildland &amp; bridge fires</li>
+          </ul>
+          <span class="btn btn-outline-gold" style="color:var(--ember-300);border-color:var(--border-ember);">Firefighting division <span class="btn-arrow"></span></span>
+        </div>
       </a>
     </div>
-
-    <form class="contact-form" id="contactForm" onsubmit="handleSkylineForm(event)" data-reveal>
-      <input type="hidden" name="_subject" value="New Inquiry from Skyline Drones Website">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="text" name="_honey" style="display:none">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required placeholder="Your full name">
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="your@email.com">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" placeholder="+63 XXX XXX XXXX">
-        </div>
-        <div class="form-group">
-          <label for="buildingType">Building Type</label>
-          <select id="buildingType" name="buildingType">
-            <option value="">Select building type</option>
-            <option>Commercial Tower</option>
-            <option>Hotel / Resort</option>
-            <option>Government</option>
-            <option>Industrial</option>
-            <option>Office Campus</option>
-            <option>Residential</option>
-            <option>Firefighting Engagement</option>
-            <option>Other</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group full">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Tell us about your building and what you need..."></textarea>
-        </div>
-      </div>
-      <button type="submit" class="form-submit">Submit inquiry</button>
-    </form>
-
-    <a href="https://wa.me/639171480498" target="_blank" rel="noopener" class="whatsapp-btn" data-reveal>
-      <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Brief us on WhatsApp
-    </a>
   </div>
 </section>
 
-<!-- ============== FOOTER ============== -->
+<!-- ===================== WHY ===================== -->
+<section class="why section" id="why">
+  <div class="container">
+    <div class="why-head" data-reveal>
+      <span class="eyebrow">Why Skyline</span>
+      <h2 class="h2">The way it was done was <em class="text-gold">dangerous, slow, and expensive.</em></h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card" data-reveal>
+        <span class="why-num">01</span>
+        <h4 class="h4">Nobody risks a fall.</h4>
+        <p>Zero workers on the facade. Zero suspended platforms. Zero rope-access exposure. The operator is on the ground. The drone is on the building.</p>
+      </div>
+      <div class="why-card" data-reveal data-reveal-delay="1">
+        <span class="why-num">02</span>
+        <h4 class="h4">10× faster than rope crews.</h4>
+        <p>A 30-storey facade that used to take a five-person abseiling team three weeks, our drone team completes in two days — weather permitting.</p>
+      </div>
+      <div class="why-card" data-reveal data-reveal-delay="2">
+        <span class="why-num">03</span>
+        <h4 class="h4">Insurance you can actually file.</h4>
+        <p>CAAP-certified pilots. Public liability coverage. Documented flight logs. The cleanest paper trail in Philippine aerial services.</p>
+      </div>
+      <div class="why-card" data-reveal data-reveal-delay="3">
+        <span class="why-num">04</span>
+        <h4 class="h4">Tools that finally caught up.</h4>
+        <p>Industrial drones with 30L payloads, high-pressure nozzles, thermal imaging, and RTK precision. Engineering, not improvisation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW (5-STEP PROCESS) ===================== -->
+<section class="how section" id="how">
+  <div class="container">
+    <div class="how-head" data-reveal>
+      <span class="eyebrow">How it works</span>
+      <h2 class="h2">From brief to <em class="text-gold">final flight report</em> in five steps.</h2>
+    </div>
+
+    <ol class="how-steps">
+      <li class="how-step" data-reveal>
+        <span class="how-step-num">01</span>
+        <div class="how-step-body">
+          <h5 class="h5">Site brief</h5>
+          <p>You send us a building photo, the floor count, and what's not working. We respond within 24 hours with a proposal range and call.</p>
+        </div>
+      </li>
+      <li class="how-step" data-reveal data-reveal-delay="1">
+        <span class="how-step-num">02</span>
+        <div class="how-step-body">
+          <h5 class="h5">Aerial survey</h5>
+          <p>Free 30-minute drone walk-around. We capture facade condition, identify hazards, and flag CAAP airspace constraints before quoting.</p>
+        </div>
+      </li>
+      <li class="how-step" data-reveal data-reveal-delay="2">
+        <span class="how-step-num">03</span>
+        <div class="how-step-body">
+          <h5 class="h5">Fixed-scope quote</h5>
+          <p>Per-floor or per-panel pricing. No hidden lift mobilisation, no scaffold day-rate. What you sign is what we bill.</p>
+        </div>
+      </li>
+      <li class="how-step" data-reveal data-reveal-delay="3">
+        <span class="how-step-num">04</span>
+        <div class="how-step-body">
+          <h5 class="h5">Flight day</h5>
+          <p>Crew of three on site: lead pilot, support pilot, ground safety. Operation runs in 60-minute flight blocks until the surface is signed off.</p>
+        </div>
+      </li>
+      <li class="how-step" data-reveal data-reveal-delay="4">
+        <span class="how-step-num">05</span>
+        <div class="how-step-body">
+          <h5 class="h5">Flight report</h5>
+          <p>You receive a delivery PDF: before/after photography, area covered, water/chemical usage, flight logs, and recommended next interval.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== COMPARISON ===================== -->
+<section class="compare section">
+  <div class="container">
+    <div class="compare-head" data-reveal>
+      <span class="eyebrow">Why drone vs. the old way</span>
+      <h2 class="h2">Same facade. <em class="text-gold">Different century.</em></h2>
+    </div>
+
+    <div class="compare-table" data-reveal>
+      <div class="compare-row compare-head-row">
+        <div></div>
+        <div>Rope access / scaffold</div>
+        <div class="is-skyline">Skyline drone</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-label">Workers at height</div>
+        <div>3–8 per shift</div>
+        <div class="is-skyline">0</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-label">30-storey facade duration</div>
+        <div>2–3 weeks</div>
+        <div class="is-skyline">2–3 days</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-label">Weather restart cost</div>
+        <div>Day-rate + remob</div>
+        <div class="is-skyline">Re-launch only</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-label">Damage to facade fixings</div>
+        <div>Anchor + abrasion risk</div>
+        <div class="is-skyline">Contactless</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-label">Insurance posture</div>
+        <div>Working-at-height premium</div>
+        <div class="is-skyline">Aviation public liability</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-label">Documentation</div>
+        <div>Hand-written log</div>
+        <div class="is-skyline">Flight data + photo PDF</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EQUIPMENT ===================== -->
+<section class="equipment section">
+  <div class="container">
+    <div class="equipment-grid">
+      <div class="equipment-text" data-reveal>
+        <span class="eyebrow">Equipment</span>
+        <h2 class="h2">Engineered for the <em class="text-gold">jobs others walk away from.</em></h2>
+        <p class="lede">Carbon-fibre frames. 30-litre fluid payloads. Thermal + visual gimbals. RTK precision navigation. Every Skyline platform is rated for high-wind operation on Philippine high-rises and certified by CAAP for commercial aerial work.</p>
+        <ul class="equipment-list">
+          <li><strong>Payload capacity:</strong> up to 30 litres per cycle</li>
+          <li><strong>Max altitude:</strong> 160 metres above ground level</li>
+          <li><strong>Sensors:</strong> 4K visual + radiometric thermal</li>
+          <li><strong>Precision:</strong> RTK GPS, 2cm horizontal accuracy</li>
+          <li><strong>Power:</strong> hot-swap battery, 5-min turnaround</li>
+        </ul>
+        <a href="./contact.html" class="btn btn-gold" data-magnetic="0.15">Spec a job <span class="btn-arrow"></span></a>
+      </div>
+      <div class="equipment-media" data-reveal data-reveal-delay="1">
+        <img src="../assets/equipment-detail.png" alt="Skyline drone equipment detail" />
+        <div class="equipment-tag equipment-tag-1">Thermal gimbal</div>
+        <div class="equipment-tag equipment-tag-2">Carbon frame</div>
+        <div class="equipment-tag equipment-tag-3">30L payload</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA POSTER ===================== -->
+<section class="cta-poster section-tight">
+  <div class="container">
+    <div class="cta-poster-inner" data-reveal>
+      <span class="eyebrow">Begin a brief</span>
+      <h2 class="display cta-poster-title">
+        Tell us where it is.<br/>
+        We'll <em class="text-gold">fly the rest.</em>
+      </h2>
+      <p class="lede cta-poster-lede">Send a building photo or coordinates. We reply with a quote range within 24 hours, including a free aerial survey window.</p>
+      <div class="cta-poster-actions">
+        <a href="./contact.html" class="btn btn-gold" data-magnetic="0.2">Begin a brief <span class="btn-arrow"></span></a>
+        <a href="https://wa.me/639171480498" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp us <span class="btn-arrow"></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
 <footer class="footer">
-  <div class="container-wide">
+  <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="../assets/logo-light.png" alt="Skyline Drones">
-        <div class="footer-brand-name">Skyline Drones</div>
-        <p>Drone-powered facade cleaning and aerial firefighting support across the Philippines. Safer, faster, and more cost-effective.</p>
+        <img src="../assets/logo-light.png" alt="Skyline Drones" />
+        <p>The Philippines' premium aerial services operator. CAAP-certified · Fully insured · Manila &amp; nationwide.</p>
       </div>
       <div class="footer-col">
-        <h4>Divisions</h4>
-        <a href="#divisions">Facade Cleaning</a>
-        <a href="#divisions">Aerial Firefighting</a>
-        <a href="#how">How It Works</a>
-        <a href="#contact">Brief Us</a>
+        <h6>Divisions</h6>
+        <ul>
+          <li><a href="./cleaning.html">Aerial cleaning</a></li>
+          <li><a href="./firefighting.html">Aerial firefighting</a></li>
+          <li><a href="#how">How it works</a></li>
+        </ul>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
-        <a href="#about">About</a>
-        <a href="#services">Who We Serve</a>
-        <a href="https://skylinedronesph.com" target="_blank" rel="noopener">Live Site</a>
+        <h6>Company</h6>
+        <ul>
+          <li><a href="#why">Why Skyline</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="https://skylinedronesph.com" target="_blank" rel="noopener">v1 site →</a></li>
+        </ul>
       </div>
       <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="mailto:skylinedrones.ph@gmail.com">skylinedrones.ph@gmail.com</a>
-        <a href="tel:+639171480498">+63 917 148 0498</a>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/share/1AfzqbDvnD/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/skylinedrones.ph/" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          </a>
-        </div>
+        <h6>Reach us</h6>
+        <ul>
+          <li><a href="mailto:skylinedrones.ph@gmail.com">skylinedrones.ph@gmail.com</a></li>
+          <li><a href="https://wa.me/639171480498" target="_blank" rel="noopener">+63 917 148 0498</a></li>
+          <li><a href="../">A/B preview switcher</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Skyline Drones · All rights reserved</p>
-      <a href="../">Switch variant →</a>
+    <div class="footer-base">
+      <div>© <span data-year>2026</span> Skyline Drones Philippines · All rights reserved</div>
+      <div class="meta">CAAP-certified · Fully insured</div>
     </div>
   </div>
 </footer>
 
-<div class="toast" id="toast">Message sent. We'll be in touch shortly.</div>
+<a class="wa-float" href="https://wa.me/639171480498" target="_blank" rel="noopener" aria-label="WhatsApp Skyline Drones">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.001 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.26.6 4.4 1.66 6.27L3.2 28.8l6.74-1.62a12.74 12.74 0 0 0 6.06 1.54h.01c7.07 0 12.79-5.73 12.79-12.8 0-3.42-1.33-6.63-3.75-9.04A12.71 12.71 0 0 0 16 3.2zm0 23.4h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4 .96 1.07-3.89-.25-.4a10.6 10.6 0 0 1-1.63-5.66c0-5.87 4.78-10.65 10.66-10.65 2.84 0 5.52 1.11 7.53 3.12a10.6 10.6 0 0 1 3.12 7.53c0 5.87-4.78 10.7-10.7 10.7zm5.85-7.97c-.32-.16-1.9-.94-2.19-1.04-.3-.11-.51-.16-.73.16-.21.32-.83 1.04-1.02 1.26-.19.22-.37.24-.69.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.5.14-.66.14-.14.32-.37.48-.55.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56l-.62-.01a1.2 1.2 0 0 0-.87.4c-.3.32-1.14 1.11-1.14 2.7s1.17 3.14 1.34 3.36c.16.21 2.3 3.52 5.58 4.94.78.34 1.39.54 1.87.69.79.25 1.51.22 2.07.13.63-.09 1.9-.78 2.18-1.53.27-.74.27-1.38.19-1.52-.08-.13-.29-.21-.61-.37z"/></svg>
+</a>
 
-<!-- Lenis smooth scroll -->
-<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-<script src="../scripts/core.js"></script>
+<!-- =====================  Scripts ===================== -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="../scripts/core.js" defer></script>
+<script defer>
+window.addEventListener("load", () => {
+  if (window.SKYLINE && window.SKYLINE.onGsap) {
+    window.SKYLINE.onGsap((gsap, ScrollTrigger) => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      /* HERO — parallax + zoom-out on scroll */
+      gsap.to(".hero-still", {
+        scale: 1.18, yPercent: 6, ease: "none",
+        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }
+      });
+      gsap.to(".hero-video", {
+        scale: 1.12, yPercent: 4, ease: "none",
+        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }
+      });
+      gsap.to(".hero-content", {
+        yPercent: -18, opacity: 0.0, ease: "power1.in",
+        scrollTrigger: { trigger: ".hero", start: "30% top", end: "bottom top", scrub: true }
+      });
+
+      /* HERO — subtle additive intro (content already visible) */
+      const tl = gsap.timeline();
+      tl.fromTo(".hero-line", { yPercent: 18 }, { yPercent: 0, duration: 1.0, ease: "expo.out", stagger: 0.08 })
+        .fromTo(".hero-stat", { y: 12, opacity: 0.6 }, { y: 0, opacity: 1, duration: 0.6, ease: "expo.out", stagger: 0.05 }, "-=0.4");
+
+      /* DIVISIONS — image float */
+      gsap.utils.toArray(".division-media img").forEach((img) => {
+        gsap.to(img, {
+          yPercent: -14, ease: "none",
+          scrollTrigger: { trigger: img.closest(".division"), start: "top bottom", end: "bottom top", scrub: true }
+        });
+      });
+
+      /* EQUIPMENT — image tilt + parallax */
+      gsap.to(".equipment-media img", {
+        yPercent: -10, ease: "none",
+        scrollTrigger: { trigger: ".equipment", start: "top bottom", end: "bottom top", scrub: true }
+      });
+
+      /* HOW — fill the timeline bar as steps come into view */
+      gsap.to(".how-steps", {
+        "--how-fill": "100%",
+        scrollTrigger: { trigger: ".how-steps", start: "top 70%", end: "bottom 70%", scrub: 0.6 }
+      });
+
+      /* CTA poster scale-in */
+      gsap.from(".cta-poster-title", {
+        yPercent: 30, opacity: 0, duration: 1.2, ease: "expo.out",
+        scrollTrigger: { trigger: ".cta-poster", start: "top 70%" }
+      });
+    });
+  }
+});
+</script>
+
 </body>
 </html>
