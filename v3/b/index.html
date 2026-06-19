@@ -30,8 +30,8 @@
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="./cleaning.html" class="nav-link is-cleaning">Cleaning</a>
-      <a href="./firefighting.html" class="nav-link is-firefight">IND-160-F Drone</a>
-      <a href="./contact.html" class="nav-cta">Begin a brief <span class="btn-arrow"></span></a>
+      <a href="./firefighting.html" class="nav-link is-firefight">Firefighting</a>
+      <a href="./contact.html" class="nav-cta">Contact us <span class="btn-arrow"></span></a>
     </nav>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
   </div>
@@ -39,9 +39,9 @@
 
 <main>
 
-<!-- CINEMATIC HERO with clip-reveal video -->
+<!-- CINEMATIC HERO (video/picture background; no scroll reveal) -->
 <section class="cine-hero" id="top">
-  <div class="cine-hero-media" data-clip-reveal>
+  <div class="cine-hero-media">
     <img class="cine-hero-still" src="../../assets/hero-cleaning.png" alt="" />
     <video class="cine-hero-video" autoplay muted loop playsinline preload="metadata" poster="../../assets/hero-cleaning.png">
       <source src="../../assets/hero-video.mp4" type="video/mp4" />
@@ -66,41 +66,63 @@
   </div>
 </section>
 
-<!-- PINNED CROSSFADE CHAPTERS (signature motion) -->
-<section class="cine-pin-group" data-pin-group aria-label="The Skyline method">
-  <div class="cine-panel" data-pin-panel>
+<!-- THE SKYLINE METHOD — editorial chapters (no crossfade, all visible) -->
+<section class="cine-pin-group" aria-label="The Skyline method">
+  <div class="cine-panel">
     <div class="container">
       <span class="cine-panel-num">01</span>
       <h2>Nobody should die <em>cleaning a window.</em></h2>
-      <p>For a century, the untouchable meant a person on a rope and an insurance file nobody wanted to open. We rebuilt the whole job around a machine.</p>
+      <div class="cine-ed-body">
+        <p>For a century, the untouchable meant a person on a rope and an insurance file nobody wanted to open. The work was dangerous, slow, and impossible to document with any rigour.</p>
+        <p>We rebuilt the whole job around a machine that holds station to two centimetres, sprays purified water at calibrated pressure, and lands when the crew says so. The operator stays on the ground. The drone does the height.</p>
+      </div>
     </div>
   </div>
-  <div class="cine-panel" data-pin-panel>
+  <div class="cine-panel">
     <div class="container">
       <span class="cine-panel-num">02</span>
       <h2>The drone holds station to <em>two centimetres.</em></h2>
-      <p>RTK precision navigation tracks a vertical line without drift, even in gusts. Purified water at calibrated pressure. The operator stays on the ground.</p>
+      <div class="cine-ed-body">
+        <p>RTK precision navigation tracks a vertical line without drift, even in gusts. Reverse-osmosis purified water leaves no spotting, so there is no rinse pass to schedule.</p>
+        <p>Calibrated 30–60 PSI through a soft-jet nozzle is safe on glass, sealants, stone, and solar surfaces alike. Every flight is logged automatically and delivered back to you as a PDF.</p>
+      </div>
     </div>
   </div>
-  <div class="cine-panel" data-pin-panel>
+  <div class="cine-panel">
     <div class="container">
       <span class="cine-panel-num">03</span>
       <h2>Same facade. <em>Different century.</em></h2>
-      <p>10× faster than rope crews. Zero workers at height. Aviation public liability instead of working-at-height premium. The cleanest paper trail in Philippine aerial services.</p>
+      <div class="cine-ed-body">
+        <p>10× faster than rope crews. Zero workers at height. Aviation public-liability cover instead of a working-at-height premium.</p>
+        <p>It is the cleanest paper trail in Philippine aerial services — before/after photography, area covered, water and chemical usage, and a recommended next interval after every job.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FULL-SCREEN GOLD SECTION (cleaning) -->
-<section class="cine-fullscreen is-gold" id="cleaning">
+<!-- FULL-SCREEN GOLD SECTION (cleaning) — editorial overlay -->
+<section class="cine-fullscreen is-gold is-editorial" id="cleaning">
   <div class="cine-fullscreen-media"><img src="../../assets/cleaning-action.png" alt="" /></div>
   <div class="container">
-    <div class="eyebrow-glyph is-gold" style="justify-content:center;display:flex;margin-bottom:var(--space-6);">
-      <span class="rotor-mark" data-rotor aria-hidden="true"></span> Aerial cleaning
+    <div class="cine-ed">
+      <div class="eyebrow-glyph is-gold">
+        <span class="rotor-mark" data-rotor aria-hidden="true"></span> Scope · Aerial cleaning
+      </div>
+      <h2>If it's vertical, fragile, or <em>far above the street</em> — we clean it.</h2>
+      <div class="cine-ed-body">
+        <p>Glass curtain walls, solar arrays, stadium roofs, heritage stone, refinery exteriors. One platform, every surface — anything previously cleaned by a person dangling from a rope.</p>
+        <p>Every project starts with a free aerial survey to confirm fit, hazards, and CAAP airspace clearance before we ever quote. No scaffold, no rope, no worker at height.</p>
+      </div>
+      <ul class="list-rotor">
+        <li>Curtain-wall facades — Grade-A office and mixed-use towers</li>
+        <li>Solar arrays — utility and industrial scale</li>
+        <li>High-rise residential — 20 to 160 metres</li>
+        <li>Stadium roofs, heritage stone, and refinery exteriors</li>
+      </ul>
+      <div class="cine-ed-cta">
+        <a href="./cleaning.html" class="btn btn-gold" data-magnetic="0.2">Explore cleaning <span class="btn-arrow"></span></a>
+      </div>
     </div>
-    <h2>If it's vertical, fragile, or <em>far above the street</em> — we clean it.</h2>
-    <p>Glass curtain walls, solar arrays, stadium roofs, heritage stone, refinery exteriors. One platform, every surface.</p>
-    <a href="./cleaning.html" class="btn btn-gold" data-magnetic="0.2">Explore cleaning <span class="btn-arrow"></span></a>
   </div>
 </section>
 
@@ -134,7 +156,7 @@
       <span class="rotor-mark" data-rotor aria-hidden="true"></span> Begin a brief
     </div>
     <h2 class="headline-editorial">Tell us where it is. <em class="accent-gold">We'll fly the rest.</em></h2>
-    <p class="editorial-body" style="margin:0 auto var(--space-10);text-align:center;">Send a building photo or coordinates. We reply with a quote range within 24 hours.</p>
+    <p class="editorial-body" style="margin:0 auto var(--space-10);text-align:center;">Send a building photo or coordinates. We reply with a quote range within 24 hours, including a free aerial survey window.</p>
     <a href="./contact.html?intent=cleaning-project" class="btn btn-gold" data-magnetic="0.25">Begin a brief <span class="btn-arrow"></span></a>
   </div>
 </section>
@@ -167,23 +189,7 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 <script src="../../scripts/core.js" defer></script>
 <script src="../shared/scripts/v3.js" defer></script>
-<script defer>
-window.addEventListener("load", () => {
-  if (window.SKYLINE && window.SKYLINE.onGsap) {
-    window.SKYLINE.onGsap((gsap, ScrollTrigger) => {
-      gsap.registerPlugin(ScrollTrigger);
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      gsap.to(".cine-hero-still, .cine-hero-video", {
-        scale: 1.16, yPercent: 8, ease: "none",
-        scrollTrigger: { trigger: ".cine-hero", start: "top top", end: "bottom top", scrub: true }
-      });
-      gsap.utils.toArray(".cine-fullscreen-media img").forEach((img) => {
-        gsap.to(img, { yPercent: -12, ease: "none",
-          scrollTrigger: { trigger: img.closest(".cine-fullscreen"), start: "top bottom", end: "bottom top", scrub: true } });
-      });
-    });
-  }
-});
-</script>
+<!-- v3.1: scroll-driven hero parallax / fullscreen parallax removed per user request.
+     The hero video/picture sits statically behind the text; no scroll fade or motion. -->
 </body>
 </html>

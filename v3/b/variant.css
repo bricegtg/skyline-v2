@@ -49,18 +49,20 @@
 }
 .cine-hero-lede { font-size: var(--text-lede); line-height: 1.5; color: var(--ink-200); max-width: 46ch; }
 
-/* ---------- Pinned crossfade chapter group ---------- */
+/* ---------- Chapter group ---------- v3.1: crossfade/pin REMOVED.
+   Panels now flow as ordinary stacked editorial blocks, fully visible,
+   no overlap, no scroll fade. (Previously each was 100vh and crossfaded.) */
 .cine-pin-group {
   position: relative;
-  min-height: 100vh;
   overflow: hidden;
 }
 .cine-panel {
-  min-height: 100vh;
   display: grid; place-items: center;
   text-align: center;
   padding: var(--v-section-pad) var(--page-pad);
+  border-top: 1px solid var(--border-faint);
 }
+.cine-panel:first-child { border-top: 0; }
 .cine-panel .container { width: 100%; }
 .cine-panel-num { font-family: var(--font-display); font-size: var(--text-h5); color: var(--gold-400); letter-spacing: 0.2em; margin-bottom: var(--space-5); display: block; }
 .cine-panel h2 {
@@ -102,6 +104,80 @@
 .cine-fullscreen.is-gold h2 em { font-style: normal; color: var(--gold-400); }
 .cine-fullscreen.is-ember h2 em { font-style: normal; color: var(--ember-300); }
 .cine-fullscreen p { color: var(--ink-200); max-width: 50ch; margin: var(--space-8) auto var(--space-10); font-size: var(--text-lede); line-height: 1.5; }
+
+/* =====================================================
+   v3.1 EDITORIAL STRUCTURE (adopted from Variant A)
+   More text per section, left-aligned editorial columns, sitting
+   statically over Variant B's cinematic visuals. No scroll fades.
+   ===================================================== */
+
+/* Editorial text overlay used inside cinematic sections.
+   eyebrow + headline + 2-3 paragraphs + optional bullet list. */
+.cine-ed { max-width: 1100px; text-align: left; margin: 0 auto; width: 100%; }
+.cine-ed .eyebrow-glyph { margin-bottom: var(--space-8); }
+.cine-ed h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 4.6rem);
+  line-height: 1.02; letter-spacing: -0.025em; text-transform: uppercase;
+  color: var(--ink-100); max-width: 20ch; margin: 0;
+}
+.cine-ed h2 em { font-style: normal; color: var(--gold-400); }
+.is-firefighting .cine-ed h2 em { color: var(--ember-300); }
+.cine-ed-body { margin-top: var(--space-8); display: grid; gap: var(--space-5); max-width: 60ch; }
+.cine-ed-body p { color: var(--ink-200); font-size: var(--text-body); line-height: 1.65; }
+.cine-ed-detail { margin-top: var(--space-10); }
+.cine-ed .list-rotor { margin-top: var(--space-8); max-width: 60ch; }
+.cine-ed .list-rotor li { color: var(--ink-200); }
+.cine-ed-cta { margin-top: var(--space-10); display: flex; gap: var(--space-4); flex-wrap: wrap; }
+
+/* Full-screen accent section, editorial (left) layout variant */
+.cine-fullscreen.is-editorial { place-items: center; text-align: left; }
+.cine-fullscreen.is-editorial .container { width: 100%; }
+.cine-fullscreen.is-editorial h2 { margin: 0; max-width: 18ch; }
+.cine-fullscreen.is-editorial p { margin-left: 0; margin-right: 0; }
+
+/* Editorial numbered scope list (B port of A's ed-scope-list) */
+.cine-scope-list { margin-top: var(--space-16); display: grid; gap: 0; }
+.cine-scope-row {
+  display: grid;
+  grid-template-columns: 64px 1.1fr 2fr;
+  gap: var(--space-8);
+  align-items: start;
+  padding: var(--space-8) 0;
+  border-top: 1px solid var(--border-faint);
+}
+.cine-scope-row:last-child { border-bottom: 1px solid var(--border-faint); }
+.cine-scope-num { font-family: var(--font-display); font-size: var(--text-h5); color: var(--ink-500); }
+.cine-scope-title {
+  font-family: var(--font-display); font-size: var(--text-h5);
+  text-transform: uppercase; letter-spacing: -0.005em; color: var(--ink-100);
+  transition: color var(--dur-quick) var(--ease-luke);
+}
+.cine-scope-row:hover .cine-scope-title { color: var(--gold-400); }
+.is-firefighting .cine-scope-row:hover .cine-scope-title { color: var(--ember-300); }
+.cine-scope-desc { color: var(--ink-300); font-size: var(--text-body); line-height: 1.6; }
+@media (max-width: 860px) {
+  .cine-scope-row { grid-template-columns: 48px 1fr; }
+  .cine-scope-desc { grid-column: 1 / -1; padding-left: calc(48px + var(--space-8)); }
+}
+@media (max-width: 560px) {
+  .cine-scope-row { grid-template-columns: 1fr; gap: var(--space-3); }
+  .cine-scope-desc { padding-left: 0; }
+}
+
+/* Editorial process steps (B port of A's ed-process) */
+.cine-process { margin-top: var(--space-16); display: grid; gap: var(--space-12); max-width: 820px; }
+.cine-step { display: grid; grid-template-columns: 70px 1fr; gap: var(--space-8); align-items: start; }
+.cine-step-num { font-family: var(--font-display); font-size: var(--text-h4); color: var(--gold-400); line-height: 1; }
+.is-firefighting .cine-step-num { color: var(--ember-300); }
+.cine-step h5 { font-family: var(--font-display); font-size: var(--text-h5); text-transform: uppercase; color: var(--ink-100); margin-bottom: var(--space-2); }
+.cine-step p { color: var(--ink-300); line-height: 1.6; }
+@media (max-width: 560px) {
+  .cine-step { grid-template-columns: 48px 1fr; gap: var(--space-5); }
+}
+
+/* Multi-paragraph chapter panels (B port of A's manifesto) */
+.cine-panel .cine-ed-body { margin-left: auto; margin-right: auto; text-align: center; }
 
 /* ---------- Horizontal scroll equipment / scope showcase ---------- */
 .cine-hscroll { position: relative; overflow: hidden; }

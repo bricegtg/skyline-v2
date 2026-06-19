@@ -82,23 +82,12 @@
     });
   }
 
-  /* ---- IntersectionObserver reveal for stagger elements ---- */
+  /* ---- Stagger reveal ---- DISABLED per user request (v3.1)
+     No scroll-triggered fade/slide of text. Mark every stagger element
+     is-in immediately so split spans render at full opacity on load. */
   function initStaggerReveals() {
     var targets = document.querySelectorAll("[data-stagger-chars], [data-stagger-words]");
-    if (!targets.length) return;
-    if (!("IntersectionObserver" in window)) {
-      targets.forEach(function (el) { el.classList.add("is-in"); });
-      return;
-    }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add("is-in");
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.2, rootMargin: "0px 0px -8% 0px" });
-    targets.forEach(function (el) { io.observe(el); });
+    targets.forEach(function (el) { el.classList.add("is-in"); });
   }
 
   /* ---- Enhanced magnetic affordance (smoother return, scale) ---- */
@@ -109,35 +98,20 @@
     });
   }
 
-  /* ---- Pinned chapters (Variant B / C) via GSAP ScrollTrigger ---- */
+  /* ---- Scroll motion (Variant B / C) via GSAP ScrollTrigger ----
+     v3.1: The pinned CROSSFADE chapters ([data-pin-group]) and the
+     CLIP-PATH hero reveal ([data-clip-reveal]) are DISABLED per user
+     request — they faded/clipped content in and out on scroll. The
+     horizontal-scroll showcase ([data-hscroll]) is KEPT because the user
+     likes that "different pictures of different places" pattern; it is a
+     horizontal translate, not an opacity fade. */
   if (window.SKYLINE && window.SKYLINE.onGsap) {
     window.SKYLINE.onGsap(function (gsap, ScrollTrigger) {
       gsap.registerPlugin(ScrollTrigger);
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-      /* Crossfading pinned panels: a [data-pin-group] holds multiple [data-pin-panel] */
-      document.querySelectorAll("[data-pin-group]").forEach(function (group) {
-        var panels = group.querySelectorAll("[data-pin-panel]");
-        if (panels.length < 2) return;
-        // stack panels
-        gsap.set(panels, { position: "absolute", inset: 0 });
-        gsap.set(panels[0], { autoAlpha: 1 });
-        gsap.set(Array.prototype.slice.call(panels, 1), { autoAlpha: 0 });
-
-        var tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: group,
-            start: "top top",
-            end: "+=" + (panels.length * 100) + "%",
-            pin: true,
-            scrub: 0.6
-          }
-        });
-        for (var i = 1; i < panels.length; i++) {
-          tl.to(panels[i - 1], { autoAlpha: 0, duration: 0.5 }, i - 1)
-            .to(panels[i], { autoAlpha: 1, duration: 0.5 }, i - 1);
-        }
-      });
+      /* [data-pin-group] crossfade chapters — REMOVED (no scroll fade). */
+      /* [data-clip-reveal] hero clip-path reveal — REMOVED (no scroll reveal). */
 
       /* Horizontal scroll showcase: [data-hscroll] wraps a [data-hscroll-track] */
       document.querySelectorAll("[data-hscroll]").forEach(function (wrap) {
@@ -156,17 +130,6 @@
             invalidateOnRefresh: true
           }
         });
-      });
-
-      /* Clip-path cinematic hero reveal: [data-clip-reveal] */
-      document.querySelectorAll("[data-clip-reveal]").forEach(function (el) {
-        gsap.fromTo(el,
-          { clipPath: "inset(18% 18% 18% 18%)" },
-          {
-            clipPath: "inset(0% 0% 0% 0%)",
-            ease: "none",
-            scrollTrigger: { trigger: el, start: "top 80%", end: "top 20%", scrub: true }
-          });
       });
     });
   }

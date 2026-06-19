@@ -126,33 +126,17 @@
 }
 .list-rotor.is-ember li::before { color: var(--ember-300); }
 
-/* ---------- Char-stagger reveal (signature editorial motion) ---------- */
-@media (prefers-reduced-motion: no-preference) {
-  .js [data-stagger-chars] .char {
-    display: inline-block;
-    opacity: 0;
-    transform: translate3d(0, 0.5em, 0) rotate(2deg);
-    transition: opacity var(--dur-reveal) var(--ease-luke),
-                transform var(--dur-reveal) var(--ease-luke);
-    will-change: opacity, transform;
-  }
-  .js [data-stagger-chars].is-in .char {
-    opacity: 1;
-    transform: none;
-  }
-  /* word-level variant */
-  .js [data-stagger-words] .word {
-    display: inline-block;
-    opacity: 0;
-    transform: translate3d(0, 0.6em, 0);
-    transition: opacity var(--dur-reveal) var(--ease-luke),
-                transform var(--dur-reveal) var(--ease-luke);
-  }
-  .js [data-stagger-words].is-in .word { opacity: 1; transform: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .js [data-stagger-chars] .char,
-  .js [data-stagger-words] .word { opacity: 1 !important; transform: none !important; }
+/* ---------- Char/word-stagger reveal — DISABLED per user request (v3.1) ---------- */
+/* User does not want text fading/sliding in on scroll. Split spans (if JS
+   still injects them) now render at full opacity with no transform/transition. */
+.js [data-stagger-chars] .char,
+.js [data-stagger-chars].is-in .char,
+.js [data-stagger-words] .word,
+.js [data-stagger-words].is-in .word {
+  display: inline-block;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
 }
 .char-space { display: inline-block; width: 0.28em; }
 

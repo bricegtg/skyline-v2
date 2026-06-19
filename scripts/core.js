@@ -60,22 +60,15 @@
     }));
   }
 
-  /* ----- Reveals ----- */
+  /* ----- Reveals ----- DISABLED per user request (v3.1)
+     User does not want scroll-triggered fade-ins. We no longer attach an
+     IntersectionObserver that animates opacity from 0 -> 1. Instead every
+     [data-reveal] element is marked is-in immediately so content is fully
+     visible on load and never changes opacity while scrolling. The CSS
+     fade rules are also disabled, so this is purely belt-and-suspenders. */
   function initReveals() {
     const targets = document.querySelectorAll("[data-reveal]");
-    if (!targets.length || !("IntersectionObserver" in window)) {
-      targets.forEach((el) => el.classList.add("is-in"));
-      return;
-    }
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("is-in");
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
-    targets.forEach((el) => io.observe(el));
+    targets.forEach((el) => el.classList.add("is-in"));
   }
 
   /* ----- Counters ----- */
