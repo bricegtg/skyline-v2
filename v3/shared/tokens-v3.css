@@ -21,6 +21,12 @@
   --lh-display: 0.9;
   --lh-tight: 1.05;
 
+  /* ---- Photography vertical accent (aerial-blue) ---- */
+  --azure-500: #3D6FB8;            /* primary photography accent (drone-sky tone) */
+  --azure-400: #6A95D6;            /* lighter shade for type/links */
+  --azure-glow: rgba(61, 111, 184, 0.35);
+  --border-azure: rgba(61, 111, 184, 0.35);
+
   /* ---- Paper section variants ---- */
   --paper-ink: #16130C;            /* near-black ink on paper */
   --paper-ink-soft: #4A4234;
@@ -55,3 +61,175 @@
 .headline-editorial em { font-style: normal; }
 .accent-gold  em, em.accent-gold  { color: var(--gold-400); }
 .accent-ember em, em.accent-ember { color: var(--ember-300); }
+.accent-azure em, em.accent-azure { color: var(--azure-400); }
+
+/* =====================================================
+   Photography vertical (azure) — mirrors ember usage on firefighting
+   ===================================================== */
+.is-photography .cine-hero-headline em { color: var(--azure-400); }
+.is-photography .cine-ed h2 em { color: var(--azure-400); }
+.is-photography .cine-panel-num,
+.is-photography .cine-panel h2 em { color: var(--azure-400); }
+.is-photography .cine-head h2 em { color: var(--azure-400); }
+.is-photography .cine-hcard-num { color: var(--azure-400); }
+.is-photography .cine-step-num { color: var(--azure-400); }
+.is-photography .eyebrow-glyph,
+.is-photography .eyebrow-glyph.is-azure { color: var(--azure-400); }
+.is-photography .nav-rotor { color: var(--azure-400); }
+.is-photography ::selection { background: var(--azure-500); color: var(--ink-100); }
+.is-photography .cmp-spec-value { color: var(--ink-100); }
+.is-photography .cmp-faq-icon::before, .is-photography .cmp-faq-icon::after { background: var(--azure-400); }
+.is-photography .cmp-trust-dot { color: var(--azure-400); }
+.is-photography .cmp-footer-mark .rotor-mark { color: var(--azure-400); }
+.is-photography .cmp-stat-num em { color: var(--azure-400); }
+.eyebrow-glyph.is-azure { color: var(--azure-400); }
+
+/* Azure buttons (mirror btn-gold / btn-ember) */
+.btn-azure {
+  background: var(--azure-500);
+  color: var(--ink-100);
+  border-color: var(--azure-500);
+}
+.btn-azure:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px -10px var(--azure-glow);
+}
+.btn-outline-azure {
+  background: transparent;
+  color: var(--azure-400);
+  border-color: var(--border-azure);
+}
+.btn-outline-azure:hover {
+  background: var(--azure-500);
+  color: var(--ink-100);
+  border-color: var(--azure-500);
+}
+/* Azure full-screen accent treatment */
+.cine-fullscreen.is-azure::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(5,5,7,0.6), rgba(4,8,16,0.85)), radial-gradient(120% 90% at 50% 30%, var(--azure-glow), transparent 60%);
+}
+.cine-fullscreen.is-azure h2 em { font-style: normal; color: var(--azure-400); }
+.is-photography .nav-link:hover,
+.is-photography .nav-link.is-active { color: var(--azure-400); }
+.is-photography .nav-link.is-active::after { background: var(--azure-400); }
+.nav-link.is-photo { color: var(--azure-400); }
+
+/* =====================================================
+   Comparison table (Skyline vs Traditional) — shared primitive
+   ===================================================== */
+.cmp-vs {
+  width: 100%;
+  border: 1px solid var(--border-faint);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.cmp-vs-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.4fr 1.4fr;
+  border-top: 1px solid var(--border-faint);
+}
+.cmp-vs-row:first-child { border-top: 0; }
+.cmp-vs-row > div {
+  padding: var(--space-5) var(--space-6);
+  font-size: var(--text-body);
+  color: var(--ink-200);
+  line-height: 1.45;
+  display: flex;
+  align-items: center;
+}
+.cmp-vs-head > div {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: var(--text-h5);
+  color: var(--ink-100);
+  background: var(--ink-850);
+}
+.cmp-vs-attr { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 13px; color: var(--ink-400); }
+.cmp-vs-skyline { color: var(--ink-100); border-left: 2px solid var(--gold-400); }
+.is-firefighting .cmp-vs-skyline { border-left-color: var(--ember-300); }
+.is-photography .cmp-vs-skyline { border-left-color: var(--azure-400); }
+.cmp-vs-head .cmp-vs-skyline { color: var(--gold-400); }
+.is-firefighting .cmp-vs-head .cmp-vs-skyline { color: var(--ember-300); }
+.is-photography .cmp-vs-head .cmp-vs-skyline { color: var(--azure-400); }
+.cmp-vs-trad { color: var(--ink-400); }
+@media (max-width: 720px) {
+  .cmp-vs-row { grid-template-columns: 1fr; }
+  .cmp-vs-row > div { padding: var(--space-3) var(--space-5); }
+  .cmp-vs-attr { padding-top: var(--space-5); color: var(--ink-300); }
+  .cmp-vs-head { display: none; }
+}
+
+/* Surface grid (Every Surface, What we shoot, Why Skyline 3-card rows) */
+.cmp-surface-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-5); }
+.cmp-surface {
+  border: 1px solid var(--border-faint);
+  border-radius: var(--r-md);
+  padding: var(--space-8) var(--space-6);
+  background: var(--glass-tint);
+  transition: border-color var(--dur-quick) var(--ease-luke), transform var(--dur-quick) var(--ease-luke);
+}
+.cmp-surface:hover { transform: translateY(-3px); border-color: var(--border-gold); }
+.is-firefighting .cmp-surface:hover { border-color: var(--border-ember); }
+.is-photography .cmp-surface:hover { border-color: var(--border-azure); }
+.cmp-surface h4 { font-family: var(--font-display); font-size: var(--text-h5); text-transform: uppercase; letter-spacing: -0.01em; color: var(--ink-100); margin-bottom: var(--space-3); }
+.cmp-surface p { color: var(--ink-300); font-size: 14px; line-height: 1.55; }
+.cmp-surface-icon { color: var(--gold-400); font-family: var(--font-display); font-size: var(--text-h5); display:block; margin-bottom: var(--space-3); }
+.is-firefighting .cmp-surface-icon { color: var(--ember-300); }
+.is-photography .cmp-surface-icon { color: var(--azure-400); }
+
+/* Photo service card with image */
+.cmp-photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-5); }
+.cmp-photo-card {
+  position: relative; overflow: hidden; border-radius: var(--r-lg);
+  border: 1px solid var(--border-faint); min-height: 320px;
+  display: flex; align-items: flex-end; isolation: isolate;
+  transition: transform var(--dur-quick) var(--ease-luke), border-color var(--dur-quick) var(--ease-luke);
+}
+.cmp-photo-card:hover { transform: translateY(-4px); border-color: var(--border-azure); }
+.cmp-photo-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 0.6s var(--ease-luke); }
+.cmp-photo-card:hover img { transform: scale(1.05); }
+.cmp-photo-card::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(5,5,7,0.05) 0%, rgba(5,5,7,0.9) 100%); }
+.cmp-photo-card-body { padding: var(--space-8); }
+.cmp-photo-card-num { font-family: var(--font-display); font-size: var(--text-h5); color: var(--azure-400); }
+.cmp-photo-card h4 { font-family: var(--font-display); font-size: var(--text-h4); text-transform: uppercase; letter-spacing: -0.02em; color: var(--ink-100); margin: var(--space-2) 0 var(--space-2); }
+.cmp-photo-card p { color: var(--ink-300); font-size: 14px; line-height: 1.5; }
+
+/* Three-vertical homepage box row */
+.cmp-vert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+@media (max-width: 900px) { .cmp-vert-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
+.cmp-vert {
+  position: relative; overflow: hidden; border-radius: var(--r-lg);
+  border: 1px solid var(--border-faint); min-height: 440px;
+  display: flex; flex-direction: column; justify-content: flex-end; isolation: isolate;
+  text-decoration: none; color: inherit;
+  transition: transform var(--dur-quick) var(--ease-luke), border-color var(--dur-quick) var(--ease-luke);
+}
+.cmp-vert img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 0.6s var(--ease-luke); }
+.cmp-vert::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(5,5,7,0.15) 0%, rgba(5,5,7,0.55) 50%, rgba(5,5,7,0.95) 100%); }
+.cmp-vert-body { padding: var(--space-8); }
+.cmp-vert-kicker { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-400); display: block; margin-bottom: var(--space-3); }
+.cmp-vert.is-clean .cmp-vert-kicker { color: var(--gold-400); }
+.cmp-vert.is-fire .cmp-vert-kicker { color: var(--ember-300); }
+.cmp-vert.is-photo .cmp-vert-kicker { color: var(--azure-400); }
+.cmp-vert h3 { font-family: var(--font-display); font-size: var(--text-h3); text-transform: uppercase; letter-spacing: -0.02em; color: var(--ink-100); line-height: 1; margin-bottom: var(--space-4); }
+.cmp-vert p { color: var(--ink-200); font-size: 15px; line-height: 1.5; margin-bottom: var(--space-5); }
+.cmp-vert-link { font-family: var(--font-display); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-100); display: inline-flex; align-items: center; gap: var(--space-2); }
+.cmp-vert.is-clean:hover { transform: translateY(-5px); border-color: var(--border-gold); }
+.cmp-vert.is-fire:hover { transform: translateY(-5px); border-color: var(--border-ember); }
+.cmp-vert.is-photo:hover { transform: translateY(-5px); border-color: var(--border-azure); }
+.cmp-vert:hover img { transform: scale(1.05); }
+.cmp-vert:hover .cmp-vert-link { color: var(--gold-400); }
+.cmp-vert.is-fire:hover .cmp-vert-link { color: var(--ember-300); }
+.cmp-vert.is-photo:hover .cmp-vert-link { color: var(--azure-400); }
+
+/* Single-line credibility band */
+.cmp-serveband {
+  text-align: center;
+  font-family: var(--font-display); text-transform: uppercase;
+  letter-spacing: 0.1em; font-size: clamp(13px, 1.4vw, 16px);
+  color: var(--ink-300); line-height: 2;
+  max-width: 1100px; margin: 0 auto;
+}
+.cmp-serveband b { color: var(--gold-400); font-weight: inherit; }

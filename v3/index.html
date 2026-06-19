@@ -2,166 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#050507" />
-<title>Skyline Drones — Choose a direction · Three website concepts</title>
-<meta name="description" content="Three design directions for Skyline Drones: Pure Editorial, Cinematic Industrial, and Hybrid. Preview each and pick the one that fits." />
+<meta http-equiv="refresh" content="0; url=./b/index.html" />
+<title>Skyline Drones — Loading…</title>
 <link rel="icon" href="./shared/favicon.svg" type="image/svg+xml" />
-<link rel="stylesheet" href="../styles/tokens.css" />
-<link rel="stylesheet" href="../styles/components.css" />
-<link rel="stylesheet" href="./shared/tokens-v3.css" />
-<link rel="stylesheet" href="./shared/v3.css" />
+<link rel="canonical" href="./b/index.html" />
 <style>
-  body { background: var(--ink-900); color: var(--ink-100); }
-  .chooser-wrap { min-height: 100vh; display: flex; flex-direction: column; }
-  .chooser-head {
-    padding: clamp(80px, 12vh, 150px) var(--page-pad) clamp(40px, 6vh, 72px);
-    max-width: 1280px; margin: 0 auto; width: 100%;
-  }
-  .chooser-eyebrow { margin-bottom: var(--space-8); }
-  .chooser-head h1 {
-    font-family: var(--font-display);
-    font-size: clamp(2.6rem, 7vw, 6rem);
-    line-height: 0.92; letter-spacing: -0.035em; text-transform: uppercase;
-    color: var(--ink-100); max-width: 18ch;
-  }
-  .chooser-head h1 em { font-style: normal; color: var(--gold-400); }
-  .chooser-head p {
-    margin-top: var(--space-8); max-width: 56ch;
-    font-size: var(--text-lede); line-height: 1.55; color: var(--ink-300);
-  }
-  .chooser-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
-    max-width: 1280px; margin: 0 auto var(--space-24); width: 100%;
-    padding: 0 var(--page-pad);
-  }
-  @media (max-width: 1000px) { .chooser-grid { grid-template-columns: 1fr; max-width: 560px; } }
-  .vcard {
-    display: flex; flex-direction: column;
-    border: 1px solid var(--border-faint); border-radius: var(--r-lg);
-    overflow: hidden; background: var(--ink-850);
-    transition: border-color var(--dur-quick) var(--ease-luke), transform var(--dur-quick) var(--ease-luke);
-  }
-  .vcard:hover { border-color: var(--border-gold); transform: translateY(-4px); }
-  .vcard-preview { position: relative; aspect-ratio: 16/10; overflow: hidden; isolation: isolate; }
-  .vcard-preview img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-luke); }
-  .vcard:hover .vcard-preview img { transform: scale(1.05); }
-  .vcard-preview::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,5,7,0.1), rgba(5,5,7,0.6)); z-index: 1; }
-  .vcard-tag {
-    position: absolute; top: var(--space-5); left: var(--space-5); z-index: 2;
-    font-family: var(--font-display); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--ink-100); background: rgba(5,5,7,0.6); padding: 6px 12px; border-radius: var(--r-pill);
-    border: 1px solid var(--border-faint);
-  }
-  .vcard-body { padding: clamp(24px, 2.5vw, 36px); display: flex; flex-direction: column; flex: 1; }
-  .vcard-letter { font-family: var(--font-display); font-size: var(--text-h5); color: var(--gold-400); letter-spacing: 0.1em; margin-bottom: var(--space-3); }
-  .vcard h2 {
-    font-family: var(--font-display); font-size: var(--text-h3);
-    line-height: 1.0; letter-spacing: -0.02em; text-transform: uppercase; color: var(--ink-100);
-    margin-bottom: var(--space-4);
-  }
-  .vcard-desc { color: var(--ink-300); line-height: 1.55; font-size: var(--text-body); margin-bottom: var(--space-6); }
-  .vcard-fit {
-    margin-top: auto; padding-top: var(--space-6); border-top: 1px solid var(--border-faint);
-    margin-bottom: var(--space-6);
-  }
-  .vcard-fit-label { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-500); display: block; margin-bottom: var(--space-2); }
-  .vcard-fit p { color: var(--ink-300); font-size: 14px; line-height: 1.5; }
-  .vcard .btn { width: 100%; justify-content: center; }
-  .chooser-foot {
-    margin-top: auto; padding: var(--space-12) var(--page-pad);
-    border-top: 1px solid var(--border-faint);
-    max-width: 1280px; margin-left: auto; margin-right: auto; width: 100%;
-    display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap;
-  }
-  .chooser-foot .cmp-footer-mark { color: var(--ink-100); }
-  .chooser-foot .meta { color: var(--ink-500); }
-  /* Variant C accent cues */
-  .vcard.is-b .vcard-letter, .vcard.is-c .vcard-letter { color: var(--gold-400); }
-  .vcard.is-b .vcard-tag { color: var(--gold-400); }
+  body { background:#050507; color:#F8F5EE; font-family:-apple-system, BlinkMacSystemFont, sans-serif; min-height:100vh; margin:0; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:24px; }
+  a { color:#E8B84B; text-decoration:none; font-family:ui-monospace, monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; }
 </style>
 </head>
 <body>
-
-<div class="grain" aria-hidden="true"></div>
-
-<div class="chooser-wrap">
-
-  <div class="chooser-head">
-    <div class="chooser-eyebrow eyebrow-glyph">
-      <span class="rotor-mark" data-rotor aria-hidden="true"></span> Skyline Drones · Design directions
-    </div>
-    <h1>One brand. <em>Three ways to fly it.</em></h1>
-    <p>The same content, tokens, and signature rotor mark — rendered in three distinct directions. Preview each, then choose the one that fits how Skyline should feel to a procurement officer, a property owner, and a fire chief.</p>
-  </div>
-
-  <div class="chooser-grid">
-
-    <!-- VARIANT A -->
-    <article class="vcard is-a">
-      <a href="./a/index.html" class="vcard-preview" aria-label="Preview Variant A — Pure Editorial">
-        <span class="vcard-tag">Pure Editorial</span>
-        <img src="../assets/cleaning-action.png" alt="Variant A hero preview" />
-      </a>
-      <div class="vcard-body">
-        <span class="vcard-letter">A</span>
-        <h2>Pure Editorial</h2>
-        <p class="vcard-desc">Maximum restraint. One enormous idea per section, viewport-filling display type, generous whitespace, and a single quiet scroll reveal. Gold and ember never share a section.</p>
-        <div class="vcard-fit">
-          <span class="vcard-fit-label">Best for</span>
-          <p>A confident, gallery-like brand that reads as premium and unhurried — closest to high-end architecture and design studios.</p>
-        </div>
-        <a href="./a/index.html" class="btn btn-gold">View this variant <span class="btn-arrow"></span></a>
-      </div>
-    </article>
-
-    <!-- VARIANT B -->
-    <article class="vcard is-b">
-      <a href="./b/index.html" class="vcard-preview" aria-label="Preview Variant B — Cinematic Industrial">
-        <span class="vcard-tag">Cinematic Industrial</span>
-        <img src="../assets/firefighting-action.png" alt="Variant B hero preview" />
-      </a>
-      <div class="vcard-body">
-        <span class="vcard-letter">B</span>
-        <h2>Cinematic Industrial</h2>
-        <p class="vcard-desc">Full-bleed dark cinema. Hero clip-path reveal, pinned crossfade chapters, horizontal-scroll showcases, and full-screen gold and ember breaks. The most dramatic motion.</p>
-        <div class="vcard-fit">
-          <span class="vcard-fit-label">Best for</span>
-          <p>Maximum impact and a story-driven scroll — ideal when the IND-160-F and the fleet need to feel powerful and inevitable.</p>
-        </div>
-        <a href="./b/index.html" class="btn btn-gold">View this variant <span class="btn-arrow"></span></a>
-      </div>
-    </article>
-
-    <!-- VARIANT C -->
-    <article class="vcard is-c">
-      <a href="./c/index.html" class="vcard-preview" aria-label="Preview Variant C — Hybrid">
-        <span class="vcard-tag">Hybrid · Recommended</span>
-        <img src="../assets/atmosphere-manila.png" alt="Variant C hero preview" />
-      </a>
-      <div class="vcard-body">
-        <span class="vcard-letter">C</span>
-        <h2>Hybrid</h2>
-        <p class="vcard-desc">The recommended balance. Home, cleaning, and contact stay calm and editorial; the IND-160-F page switches to cinematic chapters where drama earns its place.</p>
-        <div class="vcard-fit">
-          <span class="vcard-fit-label">Best for</span>
-          <p>A brand that stays composed for everyday buyers but turns up the intensity for the flagship product — the safest, most versatile choice.</p>
-        </div>
-        <a href="./c/index.html" class="btn btn-gold">View this variant <span class="btn-arrow"></span></a>
-      </div>
-    </article>
-
-  </div>
-
-  <div class="chooser-foot">
-    <div class="cmp-footer-mark"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Skyline Drones</div>
-    <div class="meta">Three concepts · Same content · © <span data-year>2026</span> Skyline Drones Philippines</div>
-  </div>
-
-</div>
-
-<script src="../scripts/core.js" defer></script>
-<script src="./shared/scripts/v3.js" defer></script>
+  <a href="./b/index.html">Enter Skyline Drones →</a>
+  <script>window.location.replace("./b/index.html");</script>
 </body>
 </html>
