@@ -22,13 +22,12 @@
 <header class="nav" role="banner">
   <div class="nav-inner">
     <a href="./index.html" class="nav-brand" aria-label="Skyline Drones home">
-      <span class="nav-rotor" data-rotor aria-hidden="true"></span>
-      <span class="nav-brand-text"><span class="nav-brand-name">Skyline Drones</span><span class="nav-brand-tag">Elevate to new heights</span></span>
+      <img class="nav-logo-img" src="../../assets/logo/skyline-drones-light-256.png" alt="Skyline Drones" />
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="./cleaning.html" class="nav-link is-cleaning is-active">Cleaning</a>
       <a href="./firefighting.html" class="nav-link is-firefight">Firefighting</a>
-      <a href="./photography.html" class="nav-link is-photo">Photography</a>
+      <a href="./photography.html" class="nav-link is-photo">Aerial Imaging &amp; Inspection</a>
       <a href="./contact.html" class="nav-cta">Contact us <span class="btn-arrow"></span></a>
     </nav>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
@@ -39,13 +38,13 @@
 
 <!-- CINEMATIC HERO -->
 <section class="cine-hero" id="top">
-  <div class="cine-hero-media"><img src="../../assets/cleaning-action.png" alt="" /></div>
+  <div class="cine-hero-media"><img src="../../assets/skyline-drone-hero.png" alt="" onerror="this.onerror=null;this.src='../../assets/cleaning-action.png'" /></div>
   <div class="cine-hero-scrim"></div>
   <div class="cine-hero-content container">
     <div class="cine-hero-eyebrow eyebrow-glyph"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Aerial Cleaning</div>
-    <h1 class="cine-hero-headline">Wash. Polish. Inspect. <em>Without leaving the ground.</em></h1>
+    <h1 class="cine-hero-headline">CLEAN. SAFE. REPEATABLE. <em>Without leaving the ground.</em></h1>
     <div class="cine-hero-foot">
-      <p class="cine-hero-lede">The Philippines' largest fleet of industrial cleaning drones. Glass curtain walls, solar arrays, stadium roofs, heritage stone — anything once cleaned from a rope.</p>
+      <p class="cine-hero-lede">Industrial-grade cleaning drones, operated by certified pilots across the Philippines. Glass curtain walls, solar arrays, stadium roofs, heritage stone — anything once cleaned from a rope.</p>
       <div class="hero-one-cta"><a href="./contact.html?intent=cleaning-project" class="btn btn-gold" data-magnetic="0.25">Request a quote <span class="btn-arrow"></span></a></div>
     </div>
   </div>
@@ -63,35 +62,57 @@
   </div>
 </section>
 
-<!-- HORIZONTAL SCROLL SCOPE SHOWCASE (8 categories) -->
-<section class="cine-hscroll" data-hscroll aria-label="What we clean" id="scope">
-  <div class="cine-hscroll-track" data-hscroll-track>
-    <article class="cine-hcard"><img src="../../assets/hero-cleaning.png" alt="Commercial office tower glass curtain wall" /><div class="cine-hcard-body"><span class="cine-hcard-num">01</span><h4>Commercial office towers</h4><p>Grade-A glass curtain walls across BGC and Makati, cleaned on quarterly cycles and documented before and after.</p></div></article>
-    <article class="cine-hcard"><img src="../../assets/cleaning-residential.png" alt="High-rise residential tower" /><div class="cine-hcard-body"><span class="cine-hcard-num">02</span><h4>High-rise residential</h4><p>Condominium towers — exterior glass, balcony walls and fins from 20 to 160 metres, without a single worker at height.</p></div></article>
-    <article class="cine-hcard"><img src="../../assets/cleaning-solar.png" alt="Rooftop solar array" /><div class="cine-hcard-body"><span class="cine-hcard-num">03</span><h4>Solar arrays &amp; rooftops</h4><p>A drone wash restores 5–15% of lost generation within a single morning — no foot traffic across the panels.</p></div></article>
-    <article class="cine-hcard"><img src="../../assets/cleaning-stadium.jpg" alt="Stadium roof" /><div class="cine-hcard-body"><span class="cine-hcard-num">04</span><h4>Stadium &amp; arena roofs</h4><p>Membrane and metal roofs cleaned between truss bays — no scaffolding, no closures, no rope teams.</p></div></article>
-    <article class="cine-hcard"><img src="../../assets/cleaning-bridge.jpg" alt="Cable-stayed bridge" /><div class="cine-hcard-body"><span class="cine-hcard-num">05</span><h4>Bridges &amp; infrastructure</h4><p>Cable-stayed and steel-arch bridges washed and inspected, with coating condition logged in the same flight.</p></div></article>
-    <article class="cine-hcard"><img src="../../assets/equipment-detail.png" alt="Industrial roof cleaning equipment" /><div class="cine-hcard-body"><span class="cine-hcard-num">06</span><h4>Industrial &amp; warehouse</h4><p>Factory and logistics roofs stripped of the dust that compromises skylights and rooftop fire sensors.</p></div></article>
-    <article class="cine-hcard"><img src="../../assets/cleaning-heritage.jpg" alt="Heritage stone facade" /><div class="cine-hcard-body"><span class="cine-hcard-num">07</span><h4>Heritage &amp; stone cladding</h4><p>Pressure-controlled cleaning that preserves jointing and natural stone, documented panel by panel.</p></div></article>
-    <article class="cine-hcard"><img src="../../assets/cleaning-action.png" alt="Metal cladding panels" /><div class="cine-hcard-body"><span class="cine-hcard-num">08</span><h4>Metal &amp; composite cladding</h4><p>Aluminium composite, metal panels and terracotta — the whole envelope, not just the glazing.</p></div></article>
-  </div>
-</section>
-
 <!-- EVERY SURFACE -->
-<section class="cine-section" id="surfaces">
+<section class="cine-section has-atmos" id="surfaces">
+  <div class="section-atmos" aria-hidden="true"><img src="../../assets/equipment-detail.png" alt="" loading="lazy" onerror="this.style.display='none'" /></div>
   <div class="container">
     <div class="cine-head" data-reveal>
       <div class="eyebrow-glyph"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Every surface</div>
       <h2>Not just the glass. <em>The entire building.</em></h2>
       <p class="editorial-body">Most cleaning crews touch only the glazing they can reach from a cradle. Our drones clean every surface of the envelope — to the same standard, without a single worker leaving the ground.</p>
     </div>
-    <div class="cmp-surface-grid" data-reveal style="margin-top:var(--space-10);">
-      <div class="cmp-surface"><span class="cmp-surface-icon">01</span><h4>Glass curtain walls</h4><p>Reverse-osmosis purified water dries clear and streak-free, even on full-height glazing.</p></div>
-      <div class="cmp-surface"><span class="cmp-surface-icon">02</span><h4>Natural stone &amp; granite</h4><p>Pressure-controlled cleaning that lifts grime without scouring the stone or its jointing.</p></div>
-      <div class="cmp-surface"><span class="cmp-surface-icon">03</span><h4>Metal cladding panels</h4><p>Powder-coated and anodised metal washed without abrasion, scratching, or runoff staining.</p></div>
-      <div class="cmp-surface"><span class="cmp-surface-icon">04</span><h4>Terracotta &amp; ceramic</h4><p>Rainscreen tiles and ceramic facades cleaned panel by panel, sealant lines left intact.</p></div>
-      <div class="cmp-surface"><span class="cmp-surface-icon">05</span><h4>Concrete &amp; precast</h4><p>Architectural concrete and precast cleared of biological growth and atmospheric soiling.</p></div>
-      <div class="cmp-surface"><span class="cmp-surface-icon">06</span><h4>Aluminium composite</h4><p>ACP rainscreens cleaned at any height with a soft-jet pass calibrated to the finish.</p></div>
+    <div class="surface-carousel" data-carousel data-reveal>
+      <div class="surface-stage">
+        <div class="surface-slide is-active">
+          <div class="surface-slide-media"><img src="../../assets/cleaning-action.png" alt="Glass curtain wall cleaning" onerror="this.onerror=null;this.src='../../assets/hero-cleaning.png'" /></div>
+          <div class="surface-slide-body"><span class="surface-slide-num">01</span><h4>Glass Curtain Walls</h4><p>Reverse-osmosis purified water dries clear and streak-free, even on full-height glazing.</p></div>
+        </div>
+        <div class="surface-slide">
+          <div class="surface-slide-media"><img src="../../assets/cleaning-heritage.jpg" alt="Natural stone and granite cleaning" onerror="this.onerror=null;this.src='../../assets/equipment-detail.png'" /></div>
+          <div class="surface-slide-body"><span class="surface-slide-num">02</span><h4>Natural Stone &amp; Granite</h4><p>Pressure-controlled cleaning that lifts grime without scouring the stone or its jointing.</p></div>
+        </div>
+        <div class="surface-slide">
+          <div class="surface-slide-media"><img src="../../assets/cleaning-bridge.jpg" alt="Aluminium composite panel cleaning" onerror="this.onerror=null;this.src='../../assets/equipment-detail.png'" /></div>
+          <div class="surface-slide-body"><span class="surface-slide-num">03</span><h4>Aluminium Composite Panels</h4><p>ACP rainscreens cleaned at any height with a soft-jet pass calibrated to the finish.</p></div>
+        </div>
+        <div class="surface-slide">
+          <div class="surface-slide-media"><img src="../../assets/cleaning-residential.png" alt="Terracotta and ceramic facade cleaning" onerror="this.onerror=null;this.src='../../assets/hero-cleaning.png'" /></div>
+          <div class="surface-slide-body"><span class="surface-slide-num">04</span><h4>Terracotta &amp; Ceramic</h4><p>Rainscreen tiles and ceramic facades cleaned panel by panel, sealant lines left intact.</p></div>
+        </div>
+        <div class="surface-slide">
+          <div class="surface-slide-media"><img src="../../assets/equipment-detail.png" alt="Concrete and render cleaning" onerror="this.onerror=null;this.src='../../assets/cleaning-action.png'" /></div>
+          <div class="surface-slide-body"><span class="surface-slide-num">05</span><h4>Concrete &amp; Render</h4><p>Architectural concrete and precast cleared of biological growth and atmospheric soiling.</p></div>
+        </div>
+        <div class="surface-slide">
+          <div class="surface-slide-media"><img src="../../assets/cleaning-solar.png" alt="Solar arrays and rooftops cleaning" onerror="this.onerror=null;this.src='../../assets/cleaning-action.png'" /></div>
+          <div class="surface-slide-body"><span class="surface-slide-num">06</span><h4>Solar Arrays &amp; Rooftops</h4><p>A drone wash restores 5–15% of lost generation within a single morning — no foot traffic across the panels.</p></div>
+        </div>
+        <div class="surface-slide">
+          <div class="surface-slide-media"><img src="../../assets/serve-warehouse.png" alt="Industrial and warehouse cleaning" onerror="this.onerror=null;this.src='../../assets/equipment-detail.png'" /></div>
+          <div class="surface-slide-body"><span class="surface-slide-num">07</span><h4>Industrial &amp; Warehouse</h4><p>Factory and logistics roofs stripped of the dust that compromises skylights and rooftop fire sensors.</p></div>
+        </div>
+        <button class="surface-arrow prev" type="button" aria-label="Previous surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <button class="surface-arrow next" type="button" aria-label="Next surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+      </div>
+      <div class="surface-dots">
+        <button class="surface-dot is-active" type="button" aria-label="Surface 1"></button>
+        <button class="surface-dot" type="button" aria-label="Surface 2"></button>
+        <button class="surface-dot" type="button" aria-label="Surface 3"></button>
+        <button class="surface-dot" type="button" aria-label="Surface 4"></button>
+        <button class="surface-dot" type="button" aria-label="Surface 5"></button>
+        <button class="surface-dot" type="button" aria-label="Surface 6"></button>
+        <button class="surface-dot" type="button" aria-label="Surface 7"></button>
+      </div>
     </div>
     <p class="editorial-body" data-reveal style="max-width:760px;margin:var(--space-10) auto 0;text-align:center;">The entirety of your building — not just the glazing — maintained to the same standard, without a single worker leaving the ground.</p>
   </div>
@@ -118,7 +139,8 @@
 </section>
 
 <!-- THE PROBLEM -->
-<section class="cine-section" style="padding-top:0;" id="problem">
+<section class="cine-section has-atmos" style="padding-top:0;" id="problem">
+  <div class="section-atmos" aria-hidden="true"><img src="../../assets/cleaning-bridge.jpg" alt="" loading="lazy" onerror="this.style.display='none'" /></div>
   <div class="container">
     <div class="cine-head" data-reveal>
       <div class="eyebrow-glyph"><span class="rotor-mark" data-rotor aria-hidden="true"></span> The problem with the old way</div>
@@ -262,39 +284,9 @@
   </div>
 </section>
 
-<!-- PRICING TIERS -->
-<section class="cine-section" id="pricing">
-  <div class="container">
-    <div class="cine-head" data-reveal>
-      <div class="eyebrow-glyph"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Pricing · Three ways to engage</div>
-      <h2>Choose the cadence. <em>We hold the price flat.</em></h2>
-      <p class="editorial-body">Every tier includes the free aerial survey, CAAP-certified crew, and the delivery PDF after each flight.</p>
-    </div>
-    <div class="cmp-pricing" data-reveal>
-      <div class="cmp-tier">
-        <div class="eyebrow">Project</div><h3 class="h3">One-off</h3><span class="cmp-tier-amount">Per m² / panel</span>
-        <p class="editorial-body">A single facade, solar array, or roof. Quoted post-survey — fixed price, no surprises.</p>
-        <ul class="list-rotor"><li>Free aerial survey</li><li>Fixed-scope quote</li><li>Before/after photo PDF</li><li>Single flight window</li></ul>
-        <a href="./contact.html?intent=cleaning-project" class="btn btn-outline-gold">Request a quote <span class="btn-arrow"></span></a>
-      </div>
-      <div class="cmp-tier" data-featured>
-        <div class="eyebrow">Property retainer</div><h3 class="h3">Quarterly</h3><span class="cmp-tier-amount">₱120k / qtr</span>
-        <p class="editorial-body">The featured tier for towers and estates. Scheduled quarterly cleans — flat for 12 months.</p>
-        <ul class="list-rotor"><li>Quarterly scheduled cleans</li><li>Priority booking + stored survey</li><li>Price held flat 12 months</li><li>Quarterly condition report</li><li>Dedicated account pilot</li></ul>
-        <a href="./contact.html?intent=cleaning-retainer" class="btn btn-gold" data-magnetic="0.12">Start a retainer <span class="btn-arrow"></span></a>
-      </div>
-      <div class="cmp-tier">
-        <div class="eyebrow">Programme</div><h3 class="h3">Enterprise</h3><span class="cmp-tier-amount">Custom</span>
-        <p class="editorial-body">For multi-site portfolios, REITs, and government estates. Consolidated reporting and SLAs.</p>
-        <ul class="list-rotor"><li>Multi-site nationwide coverage</li><li>Consolidated reporting</li><li>Defined response SLAs</li><li>Annual contract pricing</li></ul>
-        <a href="./contact.html?intent=cleaning-programme" class="btn btn-outline-gold">Talk to us <span class="btn-arrow"></span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- CTA -->
-<section class="cine-cta" id="cta">
+<section class="cine-cta has-atmos" id="cta">
+  <div class="section-atmos" aria-hidden="true"><img src="../../assets/atmosphere-manila.png" alt="" loading="lazy" onerror="this.style.display='none'" /></div>
   <div class="container">
     <div class="eyebrow-glyph" style="justify-content:center;display:flex;margin-bottom:var(--space-6);"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Begin a brief</div>
     <h2 class="headline-editorial">Send us a photo. <em class="accent-gold">We'll send a flight plan.</em></h2>
@@ -308,8 +300,8 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><div class="cmp-footer-mark"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Skyline Drones</div><p>The Philippines' premium aerial services operator. CAAP-certified · Fully insured · Manila &amp; nationwide.</p></div>
-      <div class="footer-col"><h6>What we do</h6><ul><li><a href="./cleaning.html">Aerial cleaning</a></li><li><a href="./firefighting.html">IND-160-F drone</a></li><li><a href="./photography.html">Aerial photography</a></li></ul></div>
+      <div class="footer-brand"><div class="cmp-footer-mark"><img class="footer-logo-img" src="../../assets/logo/skyline-drones-light-256.png" alt="Skyline Drones" /></div><p>The Philippines' premium aerial services operator. CAAP-certified · Fully insured · Manila &amp; nationwide.</p></div>
+      <div class="footer-col"><h6>What we do</h6><ul><li><a href="./cleaning.html">Aerial cleaning</a></li><li><a href="./firefighting.html">IND-160-F drone</a></li><li><a href="./photography.html">Aerial Imaging &amp; Inspection</a></li></ul></div>
       <div class="footer-col"><h6>Company</h6><ul><li><a href="./contact.html">Contact</a></li><li><a href="./index.html">Home</a></li></ul></div>
       <div class="footer-col"><h6>Reach us</h6><ul><li><a href="mailto:skylinedrones.ph@gmail.com">skylinedrones.ph@gmail.com</a></li><li><a href="https://wa.me/639171480498" target="_blank" rel="noopener">+63 917 148 0498</a></li></ul></div>
     </div>

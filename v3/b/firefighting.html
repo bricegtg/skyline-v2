@@ -22,13 +22,12 @@
 <header class="nav" role="banner">
   <div class="nav-inner">
     <a href="./index.html" class="nav-brand" aria-label="Skyline Drones home">
-      <span class="nav-rotor" data-rotor aria-hidden="true"></span>
-      <span class="nav-brand-text"><span class="nav-brand-name">Skyline Drones</span><span class="nav-brand-tag">Elevate to new heights</span></span>
+      <img class="nav-logo-img" src="../../assets/logo/skyline-drones-light-256.png" alt="Skyline Drones" />
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="./cleaning.html" class="nav-link is-cleaning">Cleaning</a>
       <a href="./firefighting.html" class="nav-link is-firefight is-active">Firefighting</a>
-      <a href="./photography.html" class="nav-link is-photo">Photography</a>
+      <a href="./photography.html" class="nav-link is-photo">Aerial Imaging &amp; Inspection</a>
       <a href="./contact.html?intent=procurement" class="nav-cta" style="background:var(--ember-500);color:var(--ink-100);">Contact us <span class="btn-arrow"></span></a>
     </nav>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
@@ -98,7 +97,8 @@
 </section>
 
 <!-- SPEC GRID (12-cell, adapted cmp-spec-grid) -->
-<section class="cine-section" id="spec">
+<section class="cine-section has-atmos" id="spec">
+  <div class="section-atmos" aria-hidden="true"><img src="../../assets/firefighting-action.png" alt="" loading="lazy" onerror="this.style.display='none'" /></div>
   <div class="container">
     <div class="cine-head" data-reveal>
       <div class="eyebrow-glyph is-ember"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Specification</div>
@@ -123,15 +123,22 @@
   </div>
 </section>
 
-<!-- WHERE IT DEPLOYS — horizontal scroll fire grounds (6 cards) -->
-<section class="cine-hscroll" data-hscroll aria-label="Where it deploys" id="deploy">
-  <div class="cine-hscroll-track" data-hscroll-track>
-    <article class="cine-hcard"><img src="../../assets/firefighting-highrise.png" alt="High-rise" /><div class="cine-hcard-body"><span class="cine-hcard-num">01</span><h4>High-rise</h4><p>Tower and mall fires above ladder reach. Puts foam on a 40th-floor face while crews stage the interior attack.</p></div></article>
-    <article class="cine-hcard"><img src="../../assets/firefighting-scenario-refinery.jpg" alt="Refinery" /><div class="cine-hcard-body"><span class="cine-hcard-num">02</span><h4>Refinery</h4><p>Tank, depot, and tanker fires. Approaches heat and toxic plume ground crews can't, foam-coating from above.</p></div></article>
-    <article class="cine-hcard"><img src="../../assets/firefighting-scenario-warehouse.jpg" alt="Industrial" /><div class="cine-hcard-body"><span class="cine-hcard-num">03</span><h4>Industrial</h4><p>Warehouse and factory blazes. Thermal mapping finds the seat of the fire before water is ever committed.</p></div></article>
-    <article class="cine-hcard"><img src="../../assets/firefighting-wildfire.png" alt="Wildland" /><div class="cine-hcard-body"><span class="cine-hcard-num">04</span><h4>Wildland</h4><p>Forest and grass fronts. Repeated 500L drops along a containment line, day or night, without crewed-aircraft risk.</p></div></article>
-    <article class="cine-hcard"><img src="../../assets/firefighting-scenario-stadium.jpg" alt="Stadium" /><div class="cine-hcard-body"><span class="cine-hcard-num">05</span><h4>Stadium</h4><p>Arena roofs and large-span venues. Reaches truss-bay fires no aerial appliance can physically access.</p></div></article>
-    <article class="cine-hcard"><img src="../../assets/firefighting-scenario-settlement.jpg" alt="Settlement" /><div class="cine-hcard-body"><span class="cine-hcard-num">06</span><h4>Settlement</h4><p>Dense informal settlements. Aerial water where trucks can't enter the alleys — slowing spread between structures.</p></div></article>
+<!-- WHERE IT DEPLOYS — static all-visible grid (6 cards) -->
+<section class="cine-section has-atmos" aria-label="Where it deploys" id="deploy">
+  <div class="section-atmos" aria-hidden="true"><img src="../../assets/firefighting-scenario-refinery.jpg" alt="" loading="lazy" onerror="this.style.display='none'" /></div>
+  <div class="container">
+    <div class="cine-head" data-reveal>
+      <div class="eyebrow-glyph is-ember"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Where it deploys</div>
+      <h2>Six fire grounds. <em>One platform.</em></h2>
+    </div>
+    <div class="cine-static-grid" data-reveal>
+      <article class="cine-static-card"><img src="../../assets/firefighting-highrise.png" alt="High-rise" loading="lazy" /><div class="cine-static-card-body"><span class="cine-static-card-num">01</span><h4>High-rise</h4><p>Tower and mall fires above ladder reach. Puts foam on a 40th-floor face while crews stage the interior attack.</p></div></article>
+      <article class="cine-static-card"><img src="../../assets/firefighting-scenario-refinery.jpg" alt="Refinery" loading="lazy" /><div class="cine-static-card-body"><span class="cine-static-card-num">02</span><h4>Refinery</h4><p>Tank, depot, and tanker fires. Approaches heat and toxic plume ground crews can't, foam-coating from above.</p></div></article>
+      <article class="cine-static-card"><img src="../../assets/firefighting-scenario-warehouse.jpg" alt="Industrial" loading="lazy" /><div class="cine-static-card-body"><span class="cine-static-card-num">03</span><h4>Industrial</h4><p>Warehouse and factory blazes. Thermal mapping finds the seat of the fire before water is ever committed.</p></div></article>
+      <article class="cine-static-card"><img src="../../assets/firefighting-wildfire.png" alt="Wildland" loading="lazy" /><div class="cine-static-card-body"><span class="cine-static-card-num">04</span><h4>Wildland</h4><p>Forest and grass fronts. Repeated 500L drops along a containment line, day or night, without crewed-aircraft risk.</p></div></article>
+      <article class="cine-static-card"><img src="../../assets/firefighting-scenario-stadium.jpg" alt="Stadium" loading="lazy" /><div class="cine-static-card-body"><span class="cine-static-card-num">05</span><h4>Stadium</h4><p>Arena roofs and large-span venues. Reaches truss-bay fires no aerial appliance can physically access.</p></div></article>
+      <article class="cine-static-card"><img src="../../assets/firefighting-scenario-settlement.jpg" alt="Settlement" loading="lazy" /><div class="cine-static-card-body"><span class="cine-static-card-num">06</span><h4>Settlement</h4><p>Dense informal settlements. Aerial water where trucks can't enter the alleys — slowing spread between structures.</p></div></article>
+    </div>
   </div>
 </section>
 
@@ -155,7 +162,8 @@
 </section>
 
 <!-- WHO NEEDS IT -->
-<section class="cine-section" id="buyers">
+<section class="cine-section has-atmos" id="buyers">
+  <div class="section-atmos" aria-hidden="true"><img src="../../assets/firefighting-highrise.png" alt="" loading="lazy" onerror="this.style.display='none'" /></div>
   <div class="container">
     <div class="cine-head" data-reveal>
       <div class="eyebrow-glyph is-ember"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Who needs it</div>
@@ -172,7 +180,8 @@
 </section>
 
 <!-- CTA -->
-<section class="cine-cta" id="cta">
+<section class="cine-cta has-atmos" id="cta">
+  <div class="section-atmos" aria-hidden="true"><img src="../../assets/firefighting-scenario-tanker.jpg" alt="" loading="lazy" onerror="this.style.display='none'" /></div>
   <div class="container">
     <div class="eyebrow-glyph is-ember" style="justify-content:center;display:flex;margin-bottom:var(--space-6);"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Own the first six minutes</div>
     <h2 class="headline-editorial">Manila has been waiting for this. <em class="accent-ember">Take it home.</em></h2>
@@ -186,8 +195,8 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><div class="cmp-footer-mark"><span class="rotor-mark" data-rotor aria-hidden="true" style="color:var(--ember-300);"></span> Skyline Drones</div><p>The Philippines' premium aerial services operator. CAAP-certified · Fully insured · Manila &amp; nationwide.</p></div>
-      <div class="footer-col"><h6>What we do</h6><ul><li><a href="./cleaning.html">Aerial cleaning</a></li><li><a href="./firefighting.html">IND-160-F drone</a></li><li><a href="./photography.html">Aerial photography</a></li><li><a href="#spec">Spec sheet</a></li></ul></div>
+      <div class="footer-brand"><div class="cmp-footer-mark"><img class="footer-logo-img" src="../../assets/logo/skyline-drones-light-256.png" alt="Skyline Drones" /></div><p>The Philippines' premium aerial services operator. CAAP-certified · Fully insured · Manila &amp; nationwide.</p></div>
+      <div class="footer-col"><h6>What we do</h6><ul><li><a href="./cleaning.html">Aerial cleaning</a></li><li><a href="./firefighting.html">IND-160-F drone</a></li><li><a href="./photography.html">Aerial Imaging &amp; Inspection</a></li><li><a href="#spec">Spec sheet</a></li></ul></div>
       <div class="footer-col"><h6>Procurement</h6><ul><li><a href="#brochure">Download brochure</a></li><li><a href="./contact.html?intent=procurement">Procurement call</a></li><li><a href="./contact.html?intent=partnership">Partnership</a></li></ul></div>
       <div class="footer-col"><h6>Reach us</h6><ul><li><a href="mailto:skylinedrones.ph@gmail.com">skylinedrones.ph@gmail.com</a></li><li><a href="https://wa.me/639171480498" target="_blank" rel="noopener">+63 917 148 0498</a></li></ul></div>
     </div>

@@ -21,13 +21,12 @@
 <header class="nav" role="banner">
   <div class="nav-inner">
     <a href="./index.html" class="nav-brand" aria-label="Skyline Drones home">
-      <span class="nav-rotor" data-rotor aria-hidden="true"></span>
-      <span class="nav-brand-text"><span class="nav-brand-name">Skyline Drones</span><span class="nav-brand-tag">Elevate to new heights</span></span>
+      <img class="nav-logo-img" src="../../assets/logo/skyline-drones-light-256.png" alt="Skyline Drones" />
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="./cleaning.html" class="nav-link is-cleaning">Cleaning</a>
       <a href="./firefighting.html" class="nav-link is-firefight">Firefighting</a>
-      <a href="./photography.html" class="nav-link is-photo">Photography</a>
+      <a href="./photography.html" class="nav-link is-photo">Aerial Imaging &amp; Inspection</a>
       <a href="./contact.html" class="nav-cta is-active">Contact us <span class="btn-arrow"></span></a>
     </nav>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
@@ -42,12 +41,13 @@
   <div class="cine-contact-hero-content container">
     <div class="eyebrow-glyph"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Begin a brief</div>
     <h1 style="margin-top:var(--space-6);">Send us the building. <em>We'll send back the plan.</em></h1>
-    <p class="cine-hero-lede" style="margin-top:var(--space-8);max-width:58ch;">One form. 24-hour reply. Free aerial survey for qualified cleaning projects, a direct procurement line for the IND-160-F firefighting drone, and shoot scoping for aerial photography.</p>
+    <p class="cine-hero-lede" style="margin-top:var(--space-8);max-width:58ch;">One guided form. 24-hour reply. Free aerial survey for qualified cleaning projects, a direct procurement line for the IND-160-F firefighting drone, and shoot scoping for aerial imaging &amp; inspection.</p>
   </div>
 </section>
 
 <!-- FORM + REACH -->
-<section class="cine-section" style="padding-top:0;">
+<section class="cine-section has-atmos" style="padding-top:0;">
+  <div class="section-atmos" aria-hidden="true"><img src="../../assets/serve-government.png" alt="" loading="lazy" onerror="this.style.display='none'" /></div>
   <div class="container cine-contact-grid">
 
     <!-- FORM -->
@@ -55,59 +55,176 @@
       <div class="eyebrow-glyph"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Project brief</div>
       <p class="editorial-body" style="margin:var(--space-4) 0 var(--space-8);color:var(--ink-300);">Tell us what we're flying over — a facade to clean, a deployment to procure, or a shoot to capture. Attach a building photo, an address, your IND-160-F requirements, or a shot list. We reply within 24 hours.</p>
 
-      <div class="contact-form-wrap-b">
-        <form class="form" data-formsubmit aria-label="Project brief form" novalidate>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="f-name">Your name</label>
-              <input type="text" id="f-name" name="name" placeholder="Full name" required autocomplete="name" />
+      <div class="contact-form-wrap-b" id="contact-form-wrap">
+        <form class="form" id="brief-form" aria-label="Project brief form" novalidate>
+
+          <!-- STEP 1 — INTENT -->
+          <div class="form-field">
+            <label for="f-intent">What can we help you with?</label>
+            <select id="f-intent" name="intent" required>
+              <option value="">Select a service</option>
+              <option value="cleaning">Cleaning</option>
+              <option value="firefighting">Firefighting</option>
+              <option value="imaging">Aerial Imaging &amp; Inspection</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- INTENT PANEL: CLEANING -->
+          <div class="intent-panel" data-panel="cleaning">
+            <span class="intent-panel-title">Cleaning brief</span>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="c-buildingtype">Building type</label>
+                <select id="c-buildingtype" name="Building type"><option value="">Select…</option><option>Commercial tower</option><option>Hotel</option><option>Residential</option><option>Government</option><option>Airport</option><option>Industrial</option><option>Other</option></select>
+              </div>
+              <div class="form-field">
+                <label for="c-height">Approx. height (m)</label>
+                <input type="number" id="c-height" name="Approx height (m)" placeholder="e.g. 120" min="0" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="c-surface">Primary surface</label>
+                <select id="c-surface" name="Primary surface"><option value="">Select…</option><option>Glass</option><option>Stone</option><option>Aluminium</option><option>Concrete</option><option>Terracotta</option><option>Solar</option><option>Mixed</option></select>
+              </div>
+              <div class="form-field">
+                <label for="c-area">Total facade area</label>
+                <select id="c-area" name="Total facade area"><option value="">Select…</option><option>&lt;2,000 m²</option><option>2,000–10,000 m²</option><option>10,000–25,000 m²</option><option>&gt;25,000 m²</option></select>
+              </div>
             </div>
             <div class="form-field">
-              <label for="f-company">Company / organisation</label>
-              <input type="text" id="f-company" name="company" placeholder="Optional" autocomplete="organization" />
+              <label>Frequency</label>
+              <div class="form-radio-row">
+                <label class="form-radio"><input type="radio" name="Frequency" value="One-off" /> One-off</label>
+                <label class="form-radio"><input type="radio" name="Frequency" value="Quarterly" /> Quarterly</label>
+                <label class="form-radio"><input type="radio" name="Frequency" value="Programme (monthly+)" /> Programme (monthly+)</label>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="c-method">Current method</label>
+                <select id="c-method" name="Current method"><option value="">Select…</option><option>Rope access</option><option>BMU</option><option>Scaffold</option><option>In-house</option><option>None</option><option>Other</option></select>
+              </div>
+              <div class="form-field">
+                <label for="c-start">Target start date</label>
+                <input type="date" id="c-start" name="Target start date" />
+              </div>
             </div>
           </div>
 
+          <!-- INTENT PANEL: FIREFIGHTING -->
+          <div class="intent-panel" data-panel="firefighting">
+            <span class="intent-panel-title">Firefighting brief</span>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="ff-usecase">Use case</label>
+                <select id="ff-usecase" name="Use case"><option value="">Select…</option><option>Procurement</option><option>Service contract</option><option>Brochure &amp; spec request</option><option>Partnership</option></select>
+              </div>
+              <div class="form-field">
+                <label for="ff-site">Site type</label>
+                <select id="ff-site" name="Site type"><option value="">Select…</option><option>Refinery</option><option>Warehouse</option><option>High-rise</option><option>Tank farm</option><option>Stadium</option><option>Wildland</option><option>Other</option></select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="ff-current">Current fire-response solution</label>
+              <input type="text" id="ff-current" name="Current fire-response solution" placeholder="e.g. municipal BFP, in-house brigade" />
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="ff-budget">Budget</label>
+                <select id="ff-budget" name="Budget"><option value="">Select…</option><option>&lt;$100k</option><option>$100–500k</option><option>$500k–$1M</option><option>&gt;$1M</option><option>Not disclosed</option></select>
+              </div>
+              <div class="form-field">
+                <label for="ff-timeline">Decision timeline</label>
+                <select id="ff-timeline" name="Decision timeline"><option value="">Select…</option><option>&lt;30 days</option><option>30–90 days</option><option>90–180 days</option><option>&gt;180 days</option></select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="ff-role">Procurement contact role</label>
+              <input type="text" id="ff-role" name="Procurement contact role" placeholder="e.g. Operations Chief, Procurement Officer" />
+            </div>
+          </div>
+
+          <!-- INTENT PANEL: AERIAL IMAGING & INSPECTION -->
+          <div class="intent-panel" data-panel="imaging">
+            <span class="intent-panel-title">Aerial Imaging &amp; Inspection brief</span>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="im-project">Project type</label>
+                <select id="im-project" name="Project type"><option value="">Select…</option><option>Real estate marketing</option><option>Construction progress</option><option>Roof &amp; facade inspection</option><option>Brand film</option><option>Event</option><option>Cinematic reel</option><option>Other</option></select>
+              </div>
+              <div class="form-field">
+                <label for="im-location">Location</label>
+                <input type="text" id="im-location" name="Location" placeholder="City / address" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label>Deliverable format</label>
+              <div class="form-checks">
+                <label class="form-check"><input type="checkbox" name="Deliverable format" value="4K video" /> 4K video</label>
+                <label class="form-check"><input type="checkbox" name="Deliverable format" value="8K stills" /> 8K stills</label>
+                <label class="form-check"><input type="checkbox" name="Deliverable format" value="360° tour" /> 360° tour</label>
+                <label class="form-check"><input type="checkbox" name="Deliverable format" value="Thermal" /> Thermal</label>
+                <label class="form-check"><input type="checkbox" name="Deliverable format" value="Orthomosaic" /> Orthomosaic</label>
+                <label class="form-check"><input type="checkbox" name="Deliverable format" value="Edited reel" /> Edited reel</label>
+                <label class="form-check"><input type="checkbox" name="Deliverable format" value="Raw footage" /> Raw footage</label>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="im-date">Shoot date</label>
+                <input type="date" id="im-date" name="Shoot date" />
+              </div>
+              <div class="form-field">
+                <label for="im-budget">Budget</label>
+                <select id="im-budget" name="Budget"><option value="">Select…</option><option>&lt;$2k</option><option>$2–10k</option><option>$10–50k</option><option>&gt;$50k</option><option>Discuss</option></select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="im-use">Output use</label>
+              <select id="im-use" name="Output use"><option value="">Select…</option><option>Marketing</option><option>Internal</option><option>Insurance / legal</option><option>Investor</option><option>Construction record</option><option>Other</option></select>
+            </div>
+          </div>
+
+          <!-- INTENT PANEL: OTHER -->
+          <div class="intent-panel" data-panel="other">
+            <span class="intent-panel-title">Tell us more</span>
+            <div class="form-field">
+              <label for="ot-detail">How can we help?</label>
+              <textarea id="ot-detail" name="Enquiry detail" placeholder="Describe what you're looking for…"></textarea>
+            </div>
+          </div>
+
+          <!-- COMMON FIELDS (always) -->
           <div class="form-row">
+            <div class="form-field">
+              <label for="f-name">Full name</label>
+              <input type="text" id="f-name" name="Full name" placeholder="Full name" required autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="f-company">Company</label>
+              <input type="text" id="f-company" name="Company" placeholder="Optional" autocomplete="organization" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="f-role">Role</label>
+              <input type="text" id="f-role" name="Role" placeholder="Optional" />
+            </div>
             <div class="form-field">
               <label for="f-email">Email</label>
-              <input type="email" id="f-email" name="email" placeholder="you@company.com" required autocomplete="email" />
-            </div>
-            <div class="form-field">
-              <label for="f-phone">Phone or WhatsApp</label>
-              <input type="tel" id="f-phone" name="phone" placeholder="+63" autocomplete="tel" />
+              <input type="email" id="f-email" name="Email" placeholder="you@company.com" required autocomplete="email" />
             </div>
           </div>
-
-          <div class="form-row">
-            <div class="form-field">
-              <label for="f-service">What's this about?</label>
-              <select id="f-service" name="service" required>
-                <option value="">Select a brief type</option>
-                <option value="cleaning-project">Cleaning — one-off project</option>
-                <option value="cleaning-retainer">Cleaning — property retainer</option>
-                <option value="cleaning-programme">Cleaning — enterprise programme</option>
-                <option value="procurement">IND-160-F drone — procurement</option>
-                <option value="brochure">IND-160-F drone — brochure request</option>
-                <option value="partnership">Partnership / BFP joint exercise</option>
-                <option value="photography">Aerial photography / videography</option>
-                <option value="other">Something else</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label for="f-location">Site location</label>
-              <input type="text" id="f-location" name="location" placeholder="City / address" />
-            </div>
-          </div>
-
           <div class="form-field">
-            <label for="f-message">Project brief</label>
-            <textarea id="f-message" name="message" placeholder="Building type, floor count, surface, urgency, access notes — or procurement quantity, deployment site, and timeline for the IND-160-F…" required></textarea>
+            <label for="f-phone">Phone</label>
+            <input type="tel" id="f-phone" name="Phone" placeholder="+63" autocomplete="tel" />
           </div>
-
-          <input type="hidden" name="_subject" value="New brief from Skyline Drones (v3)" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
+          <div class="form-field">
+            <label for="f-notes">Notes</label>
+            <textarea id="f-notes" name="Notes" placeholder="Anything else we should know?"></textarea>
+          </div>
 
           <div class="form-submit">
             <button type="submit" class="btn btn-gold" data-magnetic="0.15">Send brief <span class="btn-arrow"></span></button>
@@ -188,9 +305,9 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><div class="cmp-footer-mark"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Skyline Drones</div><p>The Philippines' premium aerial services operator. CAAP-certified · Fully insured · Manila &amp; nationwide.</p></div>
+      <div class="footer-brand"><div class="cmp-footer-mark"><img class="footer-logo-img" src="../../assets/logo/skyline-drones-light-256.png" alt="Skyline Drones" /></div><p>The Philippines' premium aerial services operator. CAAP-certified · Fully insured · Manila &amp; nationwide.</p></div>
       <div class="footer-col"><h6>Explore</h6><ul><li><a href="./cleaning.html">Aerial cleaning</a></li><li><a href="./firefighting.html">IND-160-F drone</a></li><li><a href="./index.html">Home</a></li></ul></div>
-      <div class="footer-col"><h6>Company</h6><ul><li><a href="./contact.html">Contact</a></li><li><a href="./photography.html">Photography</a></li></ul></div>
+      <div class="footer-col"><h6>Company</h6><ul><li><a href="./contact.html">Contact</a></li><li><a href="./photography.html">Aerial Imaging &amp; Inspection</a></li></ul></div>
       <div class="footer-col"><h6>Reach us</h6><ul><li><a href="mailto:skylinedrones.ph@gmail.com">skylinedrones.ph@gmail.com</a></li><li><a href="https://wa.me/639171480498" target="_blank" rel="noopener">+63 917 148 0498</a></li></ul></div>
     </div>
     <div class="footer-base"><div>© <span data-year>2026</span> Skyline Drones Philippines · All rights reserved</div><div class="meta">CAAP-certified · Fully insured</div></div>
@@ -201,18 +318,139 @@
   <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.001 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.26.6 4.4 1.66 6.27L3.2 28.8l6.74-1.62a12.74 12.74 0 0 0 6.06 1.54h.01c7.07 0 12.79-5.73 12.79-12.8 0-3.42-1.33-6.63-3.75-9.04A12.71 12.71 0 0 0 16 3.2zm0 23.4h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4 .96 1.07-3.89-.25-.4a10.6 10.6 0 0 1-1.63-5.66c0-5.87 4.78-10.65 10.66-10.65 2.84 0 5.52 1.11 7.53 3.12a10.6 10.6 0 0 1 3.12 7.53c0 5.87-4.78 10.7-10.7 10.7zm5.85-7.97c-.32-.16-1.9-.94-2.19-1.04-.3-.11-.51-.16-.73.16-.21.32-.83 1.04-1.02 1.26-.19.22-.37.24-.69.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.5.14-.66.14-.14.32-.37.48-.55.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56l-.62-.01a1.2 1.2 0 0 0-.87.4c-.3.32-1.14 1.11-1.14 2.7s1.17 3.14 1.34 3.36c.16.21 2.3 3.52 5.58 4.94.78.34 1.39.54 1.87.69.79.25 1.51.22 2.07.13.63-.09 1.9-.78 2.18-1.53.27-.74.27-1.38.19-1.52-.08-.13-.29-.21-.61-.37z"/></svg>
 </a>
 
-<!-- Prefill brief type from ?intent= -->
+<!-- Progressive guided questionnaire controller + intent prefill + FormSubmit AJAX -->
 <script>
   (function () {
+    var INTENT_LABELS = {
+      cleaning: "Cleaning",
+      firefighting: "Firefighting",
+      imaging: "Aerial Imaging & Inspection",
+      other: "Other"
+    };
+    // Legacy ?intent= aliases mapped to the new four intents
+    var ALIASES = {
+      "cleaning": "cleaning", "cleaning-project": "cleaning", "cleaning-retainer": "cleaning", "cleaning-programme": "cleaning",
+      "firefighting": "firefighting", "procurement": "firefighting", "brochure": "firefighting", "partnership": "firefighting",
+      "imaging": "imaging", "photography": "imaging",
+      "other": "other"
+    };
+
+    var form = document.getElementById("brief-form");
+    var wrap = document.getElementById("contact-form-wrap");
+    var sel = document.getElementById("f-intent");
+    if (!form || !sel) return;
+    var panels = Array.prototype.slice.call(form.querySelectorAll(".intent-panel"));
+
+    function showPanel(intent) {
+      panels.forEach(function (p) {
+        p.classList.toggle("is-open", p.getAttribute("data-panel") === intent);
+      });
+    }
+    sel.addEventListener("change", function () { showPanel(sel.value); });
+
+    // ?intent= prefill
     try {
       var params = new URLSearchParams(window.location.search);
-      var intent = (params.get('intent') || '').toLowerCase();
-      if (!intent) return;
-      var allowed = ['cleaning-project','cleaning-retainer','cleaning-programme','procurement','brochure','partnership','photography','other'];
-      if (allowed.indexOf(intent) === -1) return;
-      var sel = document.getElementById('f-service');
-      if (sel) sel.value = intent;
+      var raw = (params.get("intent") || "").toLowerCase();
+      var mapped = ALIASES[raw];
+      if (mapped) { sel.value = mapped; showPanel(mapped); }
     } catch (e) { /* no-op */ }
+
+    // Build a Markdown body from the active panel + common fields
+    function buildPayload() {
+      var intent = sel.value || "other";
+      var label = INTENT_LABELS[intent] || "Enquiry";
+      var company = (form.querySelector("[name='Company']") || {}).value || "";
+      var name = (form.querySelector("[name='Full name']") || {}).value || "";
+      var who = company.trim() || name.trim() || "New enquiry";
+
+      var lines = [];
+      lines.push("## " + label + " brief");
+      lines.push("");
+      lines.push("**Service:** " + label);
+
+      // Active panel fields (in DOM order)
+      var panel = form.querySelector(".intent-panel[data-panel='" + intent + "']");
+      if (panel) {
+        // Group checkboxes by name
+        var seenChecks = {};
+        Array.prototype.slice.call(panel.querySelectorAll("input, select, textarea")).forEach(function (el) {
+          var fname = el.getAttribute("name");
+          if (!fname) return;
+          if (el.type === "checkbox") {
+            if (!el.checked) return;
+            seenChecks[fname] = seenChecks[fname] || [];
+            seenChecks[fname].push(el.value);
+            return;
+          }
+          if (el.type === "radio") {
+            if (!el.checked) return;
+            lines.push("**" + fname + ":** " + el.value);
+            return;
+          }
+          if (el.value && el.value.trim()) lines.push("**" + fname + ":** " + el.value.trim());
+        });
+        Object.keys(seenChecks).forEach(function (k) {
+          lines.push("**" + k + ":** " + seenChecks[k].join(", "));
+        });
+      }
+
+      lines.push("");
+      lines.push("### Contact");
+      ["Full name", "Company", "Role", "Email", "Phone"].forEach(function (f) {
+        var el = form.querySelector("[name='" + f + "']");
+        if (el && el.value && el.value.trim()) lines.push("**" + f + ":** " + el.value.trim());
+      });
+      var notes = form.querySelector("[name='Notes']");
+      if (notes && notes.value.trim()) { lines.push(""); lines.push("### Notes"); lines.push(notes.value.trim()); }
+
+      return {
+        _subject: "New brief \u2014 " + label + " \u2014 " + who,
+        _captcha: "false",
+        _template: "box",
+        Service: label,
+        Name: name,
+        Email: (form.querySelector("[name='Email']") || {}).value || "",
+        message: lines.join("\n")
+      };
+    }
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      var toast = form.querySelector(".form-toast");
+      var btn = form.querySelector("[type='submit']");
+      // Basic required validation
+      if (!sel.value) { if (toast) { toast.textContent = "Please choose a service first."; toast.classList.add("is-show", "is-error"); } sel.focus(); return; }
+      var nameEl = form.querySelector("[name='Full name']");
+      var emailEl = form.querySelector("[name='Email']");
+      if (!nameEl.value.trim() || !emailEl.value.trim()) { if (toast) { toast.textContent = "Name and email are required."; toast.classList.add("is-show", "is-error"); } return; }
+
+      var btnText = btn ? btn.innerHTML : "";
+      if (btn) { btn.disabled = true; btn.innerHTML = "Sending\u2026"; }
+      if (toast) toast.classList.remove("is-show", "is-error");
+
+      try {
+        var res = await fetch("https://formsubmit.co/ajax/skylinedrones.ph@gmail.com", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(buildPayload())
+        });
+        if (res.ok) {
+          if (wrap) {
+            wrap.innerHTML = '<div class="form-success-card"><span class="rotor-mark" data-rotor aria-hidden="true"></span><h3>Brief received</h3><p>Thank you \u2014 your brief is in. The Skyline team responds within 24 hours. For anything urgent, WhatsApp us at +63 917 148 0498.</p></div>';
+            // re-inject rotor into the new success card
+            var r = wrap.querySelector("[data-rotor]");
+            if (r && window.SKYLINE && typeof window.SKYLINE.injectRotor === "function") { window.SKYLINE.injectRotor(r); }
+          }
+        } else {
+          if (toast) { toast.textContent = "Something went wrong. Please email skylinedrones.ph@gmail.com directly."; toast.classList.add("is-show", "is-error"); }
+          if (btn) { btn.disabled = false; btn.innerHTML = btnText; }
+        }
+      } catch (err) {
+        if (toast) { toast.textContent = "Network error. Please email skylinedrones.ph@gmail.com directly."; toast.classList.add("is-show", "is-error"); }
+        if (btn) { btn.disabled = false; btn.innerHTML = btnText; }
+      }
+    });
   })();
 </script>
 

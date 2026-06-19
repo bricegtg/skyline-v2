@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#050507" />
-<title>Skyline Drones — Manila's commercial drone operator · Cleaning, firefighting &amp; aerial photography</title>
-<meta name="description" content="Skyline Drones is Manila's commercial drone operator. Drone facade cleaning, the IND-160-F industrial firefighting drone, and aerial photography — autonomous, CAAP-certified, fully insured. Up to 160 metres, zero workers at height." />
+<title>Skyline Drones — Manila's commercial drone operator · Cleaning, firefighting &amp; aerial imaging &amp; inspection</title>
+<meta name="description" content="Skyline Drones is Manila's commercial drone operator. Drone facade cleaning, high-rise firefighting, and aerial imaging &amp; inspection — autonomous, CAAP-certified, fully insured. Up to 160 metres, zero workers at height." />
 <link rel="icon" href="../shared/favicon.svg" type="image/svg+xml" />
 <link rel="preload" as="image" href="../../assets/hero-cleaning.png" />
 <link rel="stylesheet" href="../../styles/tokens.css" />
@@ -22,16 +22,12 @@
 <header class="nav" role="banner">
   <div class="nav-inner">
     <a href="./index.html" class="nav-brand" aria-label="Skyline Drones home">
-      <span class="nav-rotor" data-rotor aria-hidden="true"></span>
-      <span class="nav-brand-text">
-        <span class="nav-brand-name">Skyline Drones</span>
-        <span class="nav-brand-tag">Elevate to new heights</span>
-      </span>
+      <img class="nav-logo-img" src="../../assets/logo/skyline-drones-light-256.png" alt="Skyline Drones" />
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="./cleaning.html" class="nav-link is-cleaning">Cleaning</a>
       <a href="./firefighting.html" class="nav-link is-firefight">Firefighting</a>
-      <a href="./photography.html" class="nav-link is-photo">Photography</a>
+      <a href="./photography.html" class="nav-link is-photo">Aerial Imaging &amp; Inspection</a>
       <a href="./contact.html" class="nav-cta">Contact us <span class="btn-arrow"></span></a>
     </nav>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
@@ -43,9 +39,10 @@
 <!-- CINEMATIC HERO (video background kept; no scroll reveal) -->
 <section class="cine-hero" id="top">
   <div class="cine-hero-media">
-    <img class="cine-hero-still" src="../../assets/hero-cleaning.png" alt="" />
-    <video class="cine-hero-video" autoplay muted loop playsinline preload="metadata" poster="../../assets/hero-cleaning.png">
-      <source src="../../assets/hero-video.mp4" type="video/mp4" />
+    <video class="cine-hero-video is-active" autoplay muted loop playsinline preload="auto"
+           poster="../../assets/hero-cleaning.png"
+           data-hero-rotate='["../../assets/hero-skyline-rise.mp4","../../assets/hero-facade-pass.mp4","../../assets/hero-three-verticals.mp4"]'>
+      <source src="../../assets/hero-skyline-rise.mp4" type="video/mp4" />
     </video>
   </div>
   <div class="cine-hero-scrim"></div>
@@ -57,7 +54,7 @@
     <h1 class="cine-hero-headline">Every height. Any surface. <em>Without a worker leaving the ground.</em></h1>
     <div class="cine-hero-foot">
       <p class="cine-hero-lede">
-        Skyline Drones is Manila's commercial drone operator. Cleaning, firefighting, and aerial photography —
+        Skyline Drones is Manila's commercial drone operator. Cleaning, firefighting, and aerial imaging &amp; inspection —
         autonomous, CAAP-certified, fully insured.
       </p>
       <div class="hero-one-cta">
@@ -83,7 +80,8 @@
 </section>
 
 <!-- THREE VERTICAL BOXES -->
-<section class="cine-section" id="verticals">
+<section class="cine-section has-atmos" id="verticals">
+  <div class="section-atmos" aria-hidden="true"><img src="../../assets/equipment-detail.png" alt="" loading="lazy" onerror="this.style.display='none'" /></div>
   <div class="container">
     <div class="cine-head" data-reveal>
       <div class="eyebrow-glyph"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Three verticals · One operator</div>
@@ -100,21 +98,21 @@
         </div>
       </a>
       <a class="cmp-vert is-fire" href="./firefighting.html">
-        <img src="../../assets/firefighting-hero.jpg" alt="IND-160-F firefighting drone" />
+        <img src="../../assets/firefighting-hero.jpg" alt="High-rise firefighting drone" />
         <div class="cmp-vert-body">
           <span class="cmp-vert-kicker">Firefighting</span>
-          <h3>IND-160-F drone</h3>
-          <p>Industrial firefighting drone. 500 L payload, 160 m reach, 6-minute response.</p>
+          <h3>High-rise firefighting</h3>
+          <p>Industrial firefighting drone. 500 L payload, 500 m reach, 4-minute response.</p>
           <span class="cmp-vert-link">Explore firefighting <span class="btn-arrow"></span></span>
         </div>
       </a>
       <a class="cmp-vert is-photo" href="./photography.html">
-        <img src="../../assets/photography-realestate.jpg" alt="Aerial photography and videography" />
+        <img src="../../assets/photography-realestate.jpg" alt="Aerial imaging and inspection" />
         <div class="cmp-vert-body">
-          <span class="cmp-vert-kicker">Photography</span>
-          <h3>Aerial photography</h3>
-          <p>Real estate, construction, brand, inspection — captured from the only vantage point that matters.</p>
-          <span class="cmp-vert-link">Explore photography <span class="btn-arrow"></span></span>
+          <span class="cmp-vert-kicker">Aerial Imaging &amp; Inspection</span>
+          <h3>Aerial Imaging &amp; Inspection</h3>
+          <p>Real estate, construction, brand, roof &amp; facade inspection — captured from the only vantage point that matters.</p>
+          <span class="cmp-vert-link">Explore aerial imaging <span class="btn-arrow"></span></span>
         </div>
       </a>
     </div>
@@ -139,20 +137,48 @@
   </div>
 </section>
 
-<!-- WHO WE SERVE — single-line credibility band -->
+<!-- WHO WE SERVE — horizontal auto-scrolling photo marquee (L→R, pause on hover) -->
 <section class="cine-section" id="serve">
   <div class="container">
     <div class="cine-head" data-reveal style="margin-bottom:var(--space-10);text-align:center;max-width:none;">
       <div class="eyebrow-glyph" style="justify-content:center;display:flex;"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Who we serve</div>
+      <h2 style="margin:var(--space-4) auto 0;">Eight building types. <em>One fleet.</em></h2>
     </div>
-    <p class="cmp-serveband" data-reveal>
-      Commercial towers · Hotels · Government · Airports · Oil &amp; gas · Industrial · Public infrastructure · Real estate developers · Construction
-    </p>
+  </div>
+  <div class="serve-marquee" aria-label="Building types we serve">
+    <div class="serve-marquee-track">
+      <!-- Set A -->
+      <div class="serve-tile"><div class="serve-tile-media"><img src="../../assets/serve-commercial-tower.png" alt="Commercial towers" loading="lazy" onerror="this.style.display='none'" /></div><span class="serve-tile-label">Commercial Towers</span><span class="serve-tile-dots"><span class="serve-dot is-gold"></span><span class="serve-dot is-ember"></span><span class="serve-dot is-azure"></span></span></div>
+      <div class="serve-tile"><div class="serve-tile-media"><img src="../../assets/serve-hotel.png" alt="Hotels" loading="lazy" onerror="this.style.display='none'" /></div><span class="serve-tile-label">Hotels</span><span class="serve-tile-dots"><span class="serve-dot is-gold"></span><span class="serve-dot is-azure"></span></span></div>
+      <div class="serve-tile"><div class="serve-tile-media"><img src="../../assets/serve-government.png" alt="Government" loading="lazy" onerror="this.style.display='none'" /></div><span class="serve-tile-label">Government</span><span class="serve-tile-dots"><span class="serve-dot is-gold"></span><span class="serve-dot is-ember"></span><span class="serve-dot is-azure"></span></span></div>
+      <div class="serve-tile"><div class="serve-tile-media"><img src="../../assets/serve-airport.png" alt="Airports" loading="lazy" onerror="this.style.display='none'" /></div><span class="serve-tile-label">Airports</span><span class="serve-tile-dots"><span class="serve-dot is-gold"></span><span class="serve-dot is-ember"></span><span class="serve-dot is-azure"></span></span></div>
+      <div class="serve-tile"><div class="serve-tile-media"><img src="../../assets/serve-oilgas.png" alt="Oil and gas" loading="lazy" onerror="this.style.display='none'" /></div><span class="serve-tile-label">Oil &amp; Gas</span><span class="serve-tile-dots"><span class="serve-dot is-ember"></span><span class="serve-dot is-azure"></span></span></div>
+      <div class="serve-tile"><div class="serve-tile-media"><img src="../../assets/serve-warehouse.png" alt="Industrial and warehouse" loading="lazy" onerror="this.style.display='none'" /></div><span class="serve-tile-label">Industrial &amp; Warehouse</span><span class="serve-tile-dots"><span class="serve-dot is-gold"></span><span class="serve-dot is-ember"></span><span class="serve-dot is-azure"></span></span></div>
+      <div class="serve-tile"><div class="serve-tile-media"><img src="../../assets/serve-infrastructure.png" alt="Public infrastructure" loading="lazy" onerror="this.style.display='none'" /></div><span class="serve-tile-label">Public Infrastructure</span><span class="serve-tile-dots"><span class="serve-dot is-gold"></span><span class="serve-dot is-azure"></span></span></div>
+      <div class="serve-tile"><div class="serve-tile-media"><img src="../../assets/serve-realestate.png" alt="Real estate developments" loading="lazy" onerror="this.style.display='none'" /></div><span class="serve-tile-label">Real Estate Developments</span><span class="serve-tile-dots"><span class="serve-dot is-gold"></span><span class="serve-dot is-azure"></span></span></div>
+      <!-- Set B (duplicate for seamless loop) -->
+      <div class="serve-tile" aria-hidden="true"><div class="serve-tile-media"><img src="../../assets/serve-commercial-tower.png" alt="" loading="lazy" onerror="this.style.display='none'" /></div><span class="serve-tile-label">Commercial Towers</span><span class="serve-tile-dots"><span class="serve-dot is-gold"></span><span class="serve-dot is-ember"></span><span class="serve-dot is-azure"></span></span></div>
+      <div class="serve-tile" aria-hidden="true"><div class="serve-tile-media"><img src="../../assets/serve-hotel.png" alt="" loading="lazy" onerror="this.style.display='none'" /></div><span class="serve-tile-label">Hotels</span><span class="serve-tile-dots"><span class="serve-dot is-gold"></span><span class="serve-dot is-azure"></span></span></div>
+      <div class="serve-tile" aria-hidden="true"><div class="serve-tile-media"><img src="../../assets/serve-government.png" alt="" loading="lazy" onerror="this.style.display='none'" /></div><span class="serve-tile-label">Government</span><span class="serve-tile-dots"><span class="serve-dot is-gold"></span><span class="serve-dot is-ember"></span><span class="serve-dot is-azure"></span></span></div>
+      <div class="serve-tile" aria-hidden="true"><div class="serve-tile-media"><img src="../../assets/serve-airport.png" alt="" loading="lazy" onerror="this.style.display='none'" /></div><span class="serve-tile-label">Airports</span><span class="serve-tile-dots"><span class="serve-dot is-gold"></span><span class="serve-dot is-ember"></span><span class="serve-dot is-azure"></span></span></div>
+      <div class="serve-tile" aria-hidden="true"><div class="serve-tile-media"><img src="../../assets/serve-oilgas.png" alt="" loading="lazy" onerror="this.style.display='none'" /></div><span class="serve-tile-label">Oil &amp; Gas</span><span class="serve-tile-dots"><span class="serve-dot is-ember"></span><span class="serve-dot is-azure"></span></span></div>
+      <div class="serve-tile" aria-hidden="true"><div class="serve-tile-media"><img src="../../assets/serve-warehouse.png" alt="" loading="lazy" onerror="this.style.display='none'" /></div><span class="serve-tile-label">Industrial &amp; Warehouse</span><span class="serve-tile-dots"><span class="serve-dot is-gold"></span><span class="serve-dot is-ember"></span><span class="serve-dot is-azure"></span></span></div>
+      <div class="serve-tile" aria-hidden="true"><div class="serve-tile-media"><img src="../../assets/serve-infrastructure.png" alt="" loading="lazy" onerror="this.style.display='none'" /></div><span class="serve-tile-label">Public Infrastructure</span><span class="serve-tile-dots"><span class="serve-dot is-gold"></span><span class="serve-dot is-azure"></span></span></div>
+      <div class="serve-tile" aria-hidden="true"><div class="serve-tile-media"><img src="../../assets/serve-realestate.png" alt="" loading="lazy" onerror="this.style.display='none'" /></div><span class="serve-tile-label">Real Estate Developments</span><span class="serve-tile-dots"><span class="serve-dot is-gold"></span><span class="serve-dot is-azure"></span></span></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="serve-legend">
+      <span class="serve-legend-item"><span class="serve-dot is-gold"></span> Cleaning</span>
+      <span class="serve-legend-item"><span class="serve-dot is-ember"></span> Firefighting</span>
+      <span class="serve-legend-item"><span class="serve-dot is-azure"></span> Aerial Imaging &amp; Inspection</span>
+    </div>
   </div>
 </section>
 
 <!-- WHY SKYLINE — 3 value cards (rebranded from the Problem section) -->
-<section class="cine-section" id="why">
+<section class="cine-section has-atmos" id="why">
+  <div class="section-atmos" aria-hidden="true"><img src="../../assets/serve-commercial-tower.png" alt="" loading="lazy" onerror="this.style.display='none'" /></div>
   <div class="container">
     <div class="cine-head" data-reveal>
       <div class="eyebrow-glyph"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Why Skyline</div>
@@ -180,7 +206,8 @@
 </section>
 
 <!-- FINAL CTA -->
-<section class="cine-cta" id="cta">
+<section class="cine-cta has-atmos" id="cta">
+  <div class="section-atmos" aria-hidden="true"><img src="../../assets/atmosphere-manila.png" alt="" loading="lazy" onerror="this.style.display='none'" /></div>
   <div class="container">
     <div class="eyebrow-glyph" style="justify-content:center;display:flex;margin-bottom:var(--space-6);">
       <span class="rotor-mark" data-rotor aria-hidden="true"></span> Begin a brief
@@ -197,10 +224,10 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="cmp-footer-mark"><span class="rotor-mark" data-rotor aria-hidden="true"></span> Skyline Drones</div>
+        <div class="cmp-footer-mark"><img class="footer-logo-img" src="../../assets/logo/skyline-drones-light-256.png" alt="Skyline Drones" /></div>
         <p>The Philippines' premium aerial services operator. CAAP-certified · Fully insured · Manila &amp; nationwide.</p>
       </div>
-      <div class="footer-col"><h6>What we do</h6><ul><li><a href="./cleaning.html">Aerial cleaning</a></li><li><a href="./firefighting.html">IND-160-F drone</a></li><li><a href="./photography.html">Aerial photography</a></li></ul></div>
+      <div class="footer-col"><h6>What we do</h6><ul><li><a href="./cleaning.html">Aerial cleaning</a></li><li><a href="./firefighting.html">IND-160-F drone</a></li><li><a href="./photography.html">Aerial Imaging &amp; Inspection</a></li></ul></div>
       <div class="footer-col"><h6>Company</h6><ul><li><a href="./contact.html">Contact</a></li></ul></div>
       <div class="footer-col"><h6>Reach us</h6><ul><li><a href="mailto:skylinedrones.ph@gmail.com">skylinedrones.ph@gmail.com</a></li><li><a href="https://wa.me/639171480498" target="_blank" rel="noopener">+63 917 148 0498</a></li></ul></div>
     </div>

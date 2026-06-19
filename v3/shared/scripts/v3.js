@@ -23,7 +23,48 @@
     splitStaggerText();
     initStaggerReveals();
     enhanceMagnetic();
+    initHeroVideoRotation();
+    initSurfaceCarousel();
   });
+
+  /* ---- v3.3: Rotating hero video (3 clips, ~8s each, no audio) ---- */
+  function initHeroVideoRotation() {
+    var video = document.querySelector("[data-hero-rotate]");
+    if (!video) return;
+    var sources;
+    try { sources = JSON.parse(video.getAttribute("data-hero-rotate")); }
+    catch (e) { sources = []; }
+    if (!sources || sources.length < 2) return;
+    var idx = 0;
+    var swap = function () {
+      idx = (idx + 1) % sources.length;
+      var srcEl = video.querySelector("source");
+      if (srcEl) { srcEl.setAttribute("src", sources[idx]); video.load(); video.play().catch(function(){}); }
+    };
+    // Advance every ~8s; also advance on ended (in case loop is removed)
+    setInterval(swap, 8000);
+  }
+
+  /* ---- v3.3: Surface click-arrow carousel (no scroll-jack) ---- */
+  function initSurfaceCarousel() {
+    document.querySelectorAll("[data-carousel]").forEach(function (root) {
+      var slides = Array.prototype.slice.call(root.querySelectorAll(".surface-slide"));
+      var dots = Array.prototype.slice.call(root.querySelectorAll(".surface-dot"));
+      var prev = root.querySelector(".surface-arrow.prev");
+      var next = root.querySelector(".surface-arrow.next");
+      if (!slides.length) return;
+      var cur = 0;
+      var go = function (i) {
+        cur = (i + slides.length) % slides.length;
+        slides.forEach(function (s, n) { s.classList.toggle("is-active", n === cur); });
+        dots.forEach(function (d, n) { d.classList.toggle("is-active", n === cur); });
+      };
+      if (prev) prev.addEventListener("click", function () { go(cur - 1); });
+      if (next) next.addEventListener("click", function () { go(cur + 1); });
+      dots.forEach(function (d, n) { d.addEventListener("click", function () { go(n); }); });
+      go(0);
+    });
+  }
 
   /* ---- Inject inline rotor SVG into [data-rotor] so currentColor works ---- */
   function injectRotors() {
@@ -112,25 +153,9 @@
 
       /* [data-pin-group] crossfade chapters — REMOVED (no scroll fade). */
       /* [data-clip-reveal] hero clip-path reveal — REMOVED (no scroll reveal). */
-
-      /* Horizontal scroll showcase: [data-hscroll] wraps a [data-hscroll-track] */
-      document.querySelectorAll("[data-hscroll]").forEach(function (wrap) {
-        var track = wrap.querySelector("[data-hscroll-track]");
-        if (!track) return;
-        var getScroll = function () { return track.scrollWidth - wrap.offsetWidth; };
-        gsap.to(track, {
-          x: function () { return -getScroll(); },
-          ease: "none",
-          scrollTrigger: {
-            trigger: wrap,
-            start: "top top",
-            end: function () { return "+=" + getScroll(); },
-            pin: true,
-            scrub: 0.6,
-            invalidateOnRefresh: true
-          }
-        });
-      });
+      /* v3.3: [data-hscroll] scroll-pin showcase REMOVED — converted to
+         static all-visible grids (firefighting/imaging) and a click-arrow
+         carousel (cleaning surfaces). No scroll hijack anywhere. */
     });
   }
 })();
